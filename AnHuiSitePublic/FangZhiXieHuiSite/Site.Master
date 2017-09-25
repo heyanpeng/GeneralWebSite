@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AnHuiSite.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%=siteConfig.SiteTitle %></title>
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <script src="js/jquery.1.4.2-min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="header">
+                <img class="logo" src="<%=siteConfig.LogoUrl %>" />
+                <div class="search">
+                    <asp:TextBox runat="server" ID="txtKeyWord" Width="150" MaxLength="20" />
+                    <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
+                </div>
+            </div>
+            <div class="nav">
+                <ul>
+                    <asp:Repeater runat="server" ID="rptNav">
+                        <ItemTemplate>
+                            <li class="<%# GetCurNavClass(Eval("LinkSrc").ToString()) %>">
+                                <a href='<%#Eval("LinkSrc") %>'><%#Eval("MenuName") %></a>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="link">
+                <ul>
+                    <li class="linkfirst">友情链接：</li>
+                    <asp:Repeater runat="server" ID="rptLink">
+                        <ItemTemplate>
+                            <li><a href='<%#Eval("UrlAddress") %>' title="<%#Eval("LinkText") %>" target="<%#Eval("target") %>"><%#Eval("LinkText") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </div>
+            <div class="footer">
+                <div class="copyright">
+                    <%=siteConfig.Copyright %>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

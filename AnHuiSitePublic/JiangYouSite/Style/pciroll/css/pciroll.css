@@ -1,0 +1,20 @@
+﻿#picroll {
+    width: 1100px;
+    height: 135px;
+    overflow: hidden;
+    position: relative;
+    position: absolute;
+    margin-top: 5px;
+}
+
+    #picroll ul li {
+        margin: 0 2px;
+        display: block;
+        float: left;
+        list-style: none;
+    }
+
+        #picroll ul li img {
+            width: 170px;
+            height: 135px;
+        }

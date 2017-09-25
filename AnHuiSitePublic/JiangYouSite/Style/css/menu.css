@@ -1,0 +1,61 @@
+﻿.menu {
+    font-family: 微软雅黑;
+    width: 1422px;
+    height: 37px;
+    background: #34972b;
+    /*opacity: 0.9;*/
+    margin-top: -14px;
+    margin-left: -176px; 
+}
+
+    .menu ul {
+        padding: 0;
+        width: 1100px;
+        list-style-type: none;
+    }
+
+        .menu ul li {
+            float: left;
+            position: relative;
+        }
+
+            .menu ul li a, .menu ul li a:visited {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                width: 89px;
+                height: 37px;
+                color: #ffffff;
+                background: #34972b;
+                line-height: 38px;
+                font-size: 14px;
+            }
+
+            .menu ul li ul {
+                display: none;
+                z-index: 1000;
+            }
+
+            .menu ul li:hover a {
+                color: #fff;
+                background: #016c01;
+            }
+
+            .menu ul li:hover ul {
+                display: block;
+                position: absolute;
+                top: 37px;
+                left: 0;
+                width: 105px;
+            }
+
+                .menu ul li:hover ul li a {
+                    display: block;
+                    background: #016c01;
+                    color: #ffffff;
+                }
+
+                    .menu ul li:hover ul li a:hover {
+                        background: #34972b;
+                        color: #ffffff;
+                    }

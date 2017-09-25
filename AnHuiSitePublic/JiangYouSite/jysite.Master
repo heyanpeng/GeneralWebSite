@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="jysite.Master.cs" Inherits="AnHuiSite.jysite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%=siteConfig.SiteTitle %></title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="Style/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="Style/js/jquery-2.1.4.min.js"></script>
+    <%--<script src="Style/js/jquery-1.9.1.js"></script>--%>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="Style/bootstrap/js/bootstrap.min.js"></script>
+    <link href="Style/css/menu.css" rel="stylesheet" />
+    <script src="Style/js/jquery.1.4.2-min.js"></script>
+    <link href="Style/css/default.css" rel="stylesheet" />
+    <link href="Style/css/content.css" rel="stylesheet" />
+    <!--[if lte IE 8]>
+    <style>
+    /* CSS for all versions of IE 8 and below */
+        .col-md-4{width:366px;float:left}
+        .titlelogo{float:left}
+        .titletree{float:right}
+        .menu{margin-top:-10px;}
+        .wordGG{margin-top:-21px;}
+        .lbq{margin-top:5px;}
+        .sublistGG ul a:hover{color: #209062;}
+        .subTitle{font-family:宋体;}
+        .logotree{margin-top: 22px;float:right;width:500px;}
+    </style>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container" style="width: 1100px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 titlelogo" style="border: 0px solid red; height: 160px;">
+                        <a href="default.aspx" title="<%=siteConfig.SiteTitle %>">
+                            <img src="<%=siteConfig.LogoUrl %>" style="margin-left: 0px; margin-top: 50px; float: left; width: 500px;" />
+                        </a>
+                        <div style="float: right; margin-top: 110px;">
+                            <input runat="server" type="text" class="form-control" id="Text1" name="keyword"
+                                placeholder="请输入关键字" style="width: 200px; float: left;" />
+                            <asp:Button runat="server" ID="Button1" Text="搜索" CssClass="btn btn-info btnSearch" OnClick="btnSearch_Click" Style="float: left; margin-left: 2px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--菜单Start-->
+            <div class="row">
+                <div class="col-md-12 col-xs-12" style="border: 0px solid red; height: 38px;">
+                    <div class="menu" style="border: 0px solid red">
+                        <ul style="border: 0px solid blue; margin-left: 136px;">
+                            <asp:Repeater runat="server" ID="rptMenu">
+                                <ItemTemplate>
+                                    <li <%#Eval("LinkSrc").ToString()!="default.aspx"?"":"style='margin-left: 25px;'" %>>
+                                        <a href='<%#Eval("LinkSrc") %>'><%#Eval("MenuName") %></a>
+                                        <ul>
+                                            <asp:Repeater ID="rptMenuChild" runat="server">
+                                                <ItemTemplate>
+                                                    <li>
+                                                        <a href='<%#Eval("LinkSrc") %>'><%#Eval("MenuName") %></a>
+                                                    </li>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </ul>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12 content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="row">
+                <!--友情链接-->
+                <div class="col-md-12 col-xs-12" style="border: 0px solid red; height: 70px; text-align: center">
+                    <div style="height: 3px; background: #1978bc;">
+                    </div>
+                    <div class="friendLink">
+                        <asp:Repeater runat="server" ID="rptFriendLink">
+                            <ItemTemplate>
+                                <a href='<%#Eval("UrlAddress") %>'>
+                                    <img src='../ahadmin/<%#Eval("PicAddress") %>' /></a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <%=siteConfig.Copyright %>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

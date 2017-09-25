@@ -1,0 +1,159 @@
+﻿.nav {
+    border: 0px solid red;
+    height: 25px;
+    line-height: 30px;
+    text-indent: -15px;
+    font-weight: bold;
+    color: #727272;
+}
+
+    .nav a {
+        text-decoration: none;
+        color: #9ea1a0;
+    }
+
+        .nav a:hover {
+            color: #9ea1a0;
+        }
+
+.content {
+    margin-top: 10px;
+    background-color: white;
+    /*border: 2px solid #dedede;*/
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 5px 0px #dedede;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+    .content .contentleft {
+        min-height: 600px;
+        height: auto;
+    }
+
+        .content .contentleft table {
+            width: 250px;
+            margin-top: 15px;
+            margin-left: 0px;
+            border: 1px solid #f8f6f7;
+            background-color: #fbfbfb;
+        }
+
+        .content .contentleft .CurrentTdChild {
+            color: #209062;
+            text-decoration: none;
+            font-weight: bold;
+            border-left: 2px solid #209062;
+        }
+
+        .content .contentleft .CurrentAChild {
+            color: #209062;
+        }
+
+        .content .contentleft table tr {
+            height: 38px;
+            border: 0px solid #dcdcdc;
+        }
+
+            .content .contentleft table tr th {
+                font-size: 20px;
+                font-family: 微软雅黑;
+                text-indent: 44px;
+                height: 60px;
+            }
+
+            .content .contentleft table tr td {
+                font-size: 15px;
+                font-family: 微软雅黑;
+                text-indent: 0px;
+                border-left: 2px solid #dcdcdc;
+            }
+
+                .content .contentleft table tr td:hover {
+                    border-left: 2px solid #209062;
+                }
+
+                    .content .contentleft table tr td:hover a {
+                        color: #209062;
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+
+                .content .contentleft table tr td a {
+                    padding-left: 15px;
+                    color: #484848;
+                }
+
+                    .content .contentleft table tr td a:hover {
+                        color: #209062;
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+
+        .content .contentleft ul {
+            list-style-type: none;
+            margin-left: -30px;
+            margin-top: 40px;
+        }
+
+            .content .contentleft ul li {
+                width: 240px;
+                height: 60px;
+                border: 1px solid #dcdcdc;
+                margin-top: 1px;
+                background-color: #398bc5;
+                text-align: center;
+                line-height: 60px;
+            }
+
+                .content .contentleft ul li a {
+                    color: white;
+                    font-size: 30px;
+                }
+
+    .content .contentright {
+        min-height: 600px;
+        height: auto;
+    }
+
+        .content .contentright ul {
+            list-style-type: none;
+            line-height: 27px;
+            margin-top: 15px;
+            margin-left: -30px;
+        }
+
+            .content .contentright ul li a {
+                color: #484848;
+            }
+
+                .content .contentright ul li a:hover {
+                    color: #209062;
+                }
+
+            .content .contentright ul li span {
+                color: #959595;
+            }
+
+        .content .contentright .newsdatetime {
+            color: #a8a8a8;
+            float: right;
+            margin-right: 15px;
+            font-size: 10px;
+        }
+
+        .content .contentright .listtitle {
+            height: 40px;
+            border-bottom: 1px solid #a0a0a0;
+            line-height: 55px;
+            text-indent: 5px;
+            color: #484848;
+            font-size: 16px;
+        }
+
+            .content .contentright .listtitle a {
+                float: right;
+                color: #209062;
+                text-decoration: none;
+            }
+

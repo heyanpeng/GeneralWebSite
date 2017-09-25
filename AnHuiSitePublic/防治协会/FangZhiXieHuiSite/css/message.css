@@ -1,0 +1,18 @@
+﻿.sendmessage{margin-bottom:20px;padding-left:0px;padding-top:20px;}
+.sendmessage table{width:100%;background-color:#fbfbfb;text-align:center;margin-bottom:30px}
+.sendmessage table tr{border:0 solid red;height:45px;}
+.sendmessage table tr td{border:0 solid red;}
+
+
+
+.messagelist{margin-top:20px;}
+.messagelist table{border:1px solid #f6f6f6;background-color:#fbfbfb;width:100%;margin-top:20px}
+.messagelist table tr{border:0 solid red;height:100px}
+.messagelist table tr td{border:0 solid red}
+
+
+
+.messagepage{height:36px;border:0 solid red;margin-top:10px;margin-bottom:10px}
+.messagepage .pagination{float:right;margin-top:0}
+
+.iwantsay{float:right;margin-right:10px;font-weight:bold;color:green;font-size:16px;line-height:25px;cursor:pointer;}

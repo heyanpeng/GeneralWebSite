@@ -1,0 +1,180 @@
+﻿.nav {
+    border: 0px solid red;
+    height: 25px;
+    line-height: 30px;
+    text-indent: -15px;
+    font-weight: bold;
+    color: #727272;
+}
+
+    .nav a {
+        text-decoration: none;
+        color: #9ea1a0;
+    }
+
+        .nav a:hover {
+            color: #9ea1a0;
+        }
+
+.content {
+    height: auto;
+    min-height: 600px;
+    background-color: white;
+    /*border: 2px solid #dedede;*/
+    box-shadow: 1px 1px 5px 0px #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+    .content .contentleft {
+        min-height: 600px;
+        height: auto;
+    }
+
+        .content .contentleft table {
+            width: 250px;
+            margin-top: 15px;
+            margin-left: 0px;
+            border: 1px solid #f8f6f7;
+            background-color: #fbfbfb;
+        }
+
+        .content .contentleft .CurrentTdChild {
+            color: #209062;
+            text-decoration: none;
+            font-weight: bold;
+            border-left: 2px solid #209062;
+        }
+
+        .content .contentleft .CurrentAChild {
+            color: #209062;
+        }
+
+        .content .contentleft table tr {
+            height: 38px;
+            border: 0px solid #dcdcdc;
+        }
+
+            .content .contentleft table tr th {
+                font-size: 20px;
+                font-family: 微软雅黑;
+                text-indent: 44px;
+                height: 60px;
+            }
+
+            .content .contentleft table tr td {
+                font-size: 15px;
+                font-family: 微软雅黑;
+                text-indent: 0px;
+                border-left: 2px solid #dcdcdc;
+            }
+
+                .content .contentleft table tr td:hover {
+                    border-left: 2px solid #209062;
+                }
+
+                    .content .contentleft table tr td:hover a {
+                        color: #209062;
+                        text-decoration: none;
+                        /*font-weight: bold;*/
+                    }
+
+                .content .contentleft table tr td a {
+                    padding-left: 15px;
+                    color: #484848;
+                }
+
+                    .content .contentleft table tr td a:hover {
+                        color: #209062;
+                        text-decoration: none;
+                        /*font-weight: bold;*/
+                    }
+
+        .content .contentleft ul {
+            list-style-type: none;
+            margin-left: -30px;
+            margin-top: 40px;
+        }
+
+            .content .contentleft ul li {
+                width: 240px;
+                height: 60px;
+                border: 1px solid #dcdcdc;
+                margin-top: 1px;
+            }
+
+    .content .contentright {
+        border: 0px solid red;
+        min-height: 800px;
+        height: auto;
+    }
+
+        .content .contentright .send {
+            border: 0px solid green;
+            height: auto;
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content .contentright .messagelist {
+            margin-top: 20px;
+        }
+
+            .content .contentright .messagelist table {
+                border: 1px solid #f6f6f6;
+                background-color: #fbfbfb;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+                .content .contentright .messagelist table tr {
+                    border: 0px solid red;
+                    height: 100px;
+                }
+
+                    .content .contentright .messagelist table tr td {
+                        border: 0px solid red;
+                    }
+
+        .content .contentright .messagepage {
+            height: 36px;
+            border: 0px solid red;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+            .content .contentright .messagepage .pagination {
+                float: right;
+                margin-top: 0px;
+            }
+
+        .content .contentright .sendmessage {
+            background-color: #fbfbfb;
+            /*border: 1px solid red;*/
+            width: 100%;
+            box-shadow: 1px 1px 5px 0px #ccc;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            height: 390px;
+            margin-bottom: 20px;
+        }
+
+            .content .contentright .sendmessage table {
+                width: 100%;
+                /*border: 1px solid #f6f6f6;*/
+                background-color: #fbfbfb;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+                .content .contentright .sendmessage table tr {
+                    border: 0px solid red;
+                    height: 45px;
+                }
+
+                    .content .contentright .sendmessage table tr td {
+                        border: 0px solid red;
+                    }

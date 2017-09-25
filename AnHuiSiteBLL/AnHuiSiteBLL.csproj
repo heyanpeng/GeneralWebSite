@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85B568CB-3A7A-4ED6-81C7-C241F6D808BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnHuiSiteBLL</RootNamespace>
+    <AssemblyName>AnHuiSiteBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticsManager.cs" />
+    <Compile Include="T_Ad.cs" />
+    <Compile Include="T_AuthInfoManager.cs" />
+    <Compile Include="T_ContentTypeManager.cs" />
+    <Compile Include="T_FilesManager.cs" />
+    <Compile Include="T_LinksManager.cs" />
+    <Compile Include="T_MenusManager.cs" />
+    <Compile Include="T_Messages.cs" />
+    <Compile Include="T_MultiMedia.cs" />
+    <Compile Include="T_NewsManager.cs" />
+    <Compile Include="T_RoleManager.cs" />
+    <Compile Include="T_SiteConfigManager.cs" />
+    <Compile Include="T_StaticPageManager.cs" />
+    <Compile Include="T_UserManager.cs" />
+    <Compile Include="T_UserRoleManager.cs" />
+    <Compile Include="T_Vote.cs" />
+    <Compile Include="T_VoteItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnHuiSiteDAL\AnHuiSiteDAL.csproj">
+      <Project>{796b8f3a-d69a-4785-b918-1433266af030}</Project>
+      <Name>AnHuiSiteDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnHuiSiteModel\AnHuiSiteModel.csproj">
+      <Project>{236fadec-40f2-4fb3-93bb-7e36d299b83b}</Project>
+      <Name>AnHuiSiteModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
