@@ -1,0 +1,1318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A0D28B1-3056-456E-9091-66AF2D49E6CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnHuiSite</RootNamespace>
+    <AssemblyName>AnHuiSite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AnHuiSiteDLLlibrary\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="Brettle.Web.NeatUpload, Version=1.3.4034.20191, Culture=neutral, PublicKeyToken=dd134ea1c3727369, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Brettle.Web.NeatUpload.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\Libs\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AHAdmin\AddMenu.aspx" />
+    <Content Include="AHAdmin\AddRole.aspx" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\anchor\anchor.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\attachment.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\attachment.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\attachment.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\icons.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\image.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\progress.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\success.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\attachment\images\success.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\background\background.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\background\background.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\background\background.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\background\images\bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\background\images\success.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\chart.config.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\charts.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\charts.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\charts.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\images\charts0.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\images\charts1.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\images\charts2.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\images\charts3.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\images\charts4.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\charts\images\charts5.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\emotion.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\emotion.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\emotion.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\0.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\gmap\gmap.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\help\help.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\help\help.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\help\help.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\image.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\image.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\image.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\icons.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\icons.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\image.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\progress.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\success.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\image\images\success.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\internal.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\link\link.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\map\map.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\map\show.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\music\music.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\music\music.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\music\music.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\preview\preview.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\size.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\spechars\spechars.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\spechars\spechars.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\table\dragicon.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\table\edittable.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\table\edittable.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\table\edittable.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\table\edittd.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\table\edittip.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\config.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\images\bg.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\images\pre0.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\images\pre1.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\images\pre2.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\images\pre3.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\images\pre4.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\template.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\template.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\template\template.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\file-icons.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\icons.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\icons.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\image.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\progress.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\success.gif" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\images\success.png" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\video.css" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\video.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\video\video.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\webapp\webapp.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\wordimage\tangram.js" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="AHAdmin\assets\ueditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\en.js" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\addimage.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\background.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\button.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\copy.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\deletedisable.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\deleteenable.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\listbackground.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\localimage.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\music.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\en\images\upload.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\zh-cn\images\copy.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\zh-cn\images\music.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\zh-cn\images\upload.png" />
+    <Content Include="AHAdmin\assets\ueditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="AHAdmin\assets\ueditor\net\upload\image\20150714\6357246532334092433961862.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\net\upload\image\20150714\6357246558747103174938681.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\net\upload\image\20150714\6357246580263633847636024.jpg" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\css\ueditor.css" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\css\ueditor.min.css" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\dialogbase.css" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\anchor.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\arrow.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\arrow_down.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\arrow_up.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\button-bg.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\charts.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\cursor_h.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\cursor_h.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\cursor_v.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\cursor_v.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\filescan.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\highlighted.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\icons-all.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\icons.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\icons.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\loaderror.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\loading.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\lock.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\pagebreak.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\scale.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\sortable.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\spacer.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\sparator_v.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\table-cell-align.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\upload.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\videologo.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\word.gif" />
+    <Content Include="AHAdmin\assets\ueditor\themes\default\images\wordpaste.png" />
+    <Content Include="AHAdmin\assets\ueditor\themes\iframe.css" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\codemirror\codemirror.css" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\codemirror\codemirror.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\highcharts.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\data.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\map.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\jquery-1.10.2.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\video-js.css" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\video-js.min.css" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\video-js.swf" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\video.dev.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\video.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.css" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="AHAdmin\assets\ueditor\ueditor.all.min.js" />
+    <Content Include="AHAdmin\assets\ueditor\ueditor.config.js" />
+    <Content Include="AHAdmin\assets\ueditor\ueditor.parse.min.js" />
+    <Content Include="AHAdmin\EditFiles.aspx" />
+    <Content Include="AHAdmin\EditLinks.aspx" />
+    <Content Include="AHAdmin\EditMessages.aspx" />
+    <Content Include="AHAdmin\EditNews.aspx" />
+    <Content Include="AHAdmin\FileManager.aspx" />
+    <Content Include="AHAdmin\images\loading.gif" />
+    <Content Include="AHAdmin\js\File.js" />
+    <Content Include="AHAdmin\js\Index.js" />
+    <Content Include="AHAdmin\js\Links.js" />
+    <Content Include="AHAdmin\js\MessagesManager.js" />
+    <Content Include="AHAdmin\js\NewsManager.js" />
+    <Content Include="AHAdmin\js\StaticPage.js" />
+    <Content Include="AHAdmin\LinksManager.aspx" />
+    <Content Include="AHAdmin\Logout.aspx" />
+    <Content Include="AHAdmin\MessagesManager.aspx" />
+    <Content Include="AHAdmin\NewsManager.aspx" />
+    <Content Include="AHAdmin\AddUser.aspx" />
+    <Content Include="AHAdmin\assets\avatars\avatar.png" />
+    <Content Include="AHAdmin\assets\avatars\avatar1.png" />
+    <Content Include="AHAdmin\assets\avatars\avatar2.png" />
+    <Content Include="AHAdmin\assets\avatars\avatar3.png" />
+    <Content Include="AHAdmin\assets\avatars\avatar4.png" />
+    <Content Include="AHAdmin\assets\avatars\avatar5.png" />
+    <Content Include="AHAdmin\assets\avatars\profile-pic.jpg" />
+    <Content Include="AHAdmin\assets\avatars\user.jpg" />
+    <Content Include="AHAdmin\assets\css\ace-ie.min.css" />
+    <Content Include="AHAdmin\assets\css\ace-rtl.min.css" />
+    <Content Include="AHAdmin\assets\css\ace-skins.min.css" />
+    <Content Include="AHAdmin\assets\css\ace.min.css" />
+    <Content Include="AHAdmin\assets\css\bootstrap-editable.css" />
+    <Content Include="AHAdmin\assets\css\bootstrap-timepicker.css" />
+    <Content Include="AHAdmin\assets\css\bootstrap.min.css" />
+    <Content Include="AHAdmin\assets\css\chosen.css" />
+    <Content Include="AHAdmin\assets\css\colorbox.css" />
+    <Content Include="AHAdmin\assets\css\colorpicker.css" />
+    <Content Include="AHAdmin\assets\css\datepicker.css" />
+    <Content Include="AHAdmin\assets\css\daterangepicker.css" />
+    <Content Include="AHAdmin\assets\css\dropzone.css" />
+    <Content Include="AHAdmin\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="AHAdmin\assets\css\font-awesome.min.css" />
+    <Content Include="AHAdmin\assets\css\fullcalendar.css" />
+    <Content Include="AHAdmin\assets\css\images\loading.gif" />
+    <Content Include="AHAdmin\assets\css\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="AHAdmin\assets\css\jquery-ui-1.10.3.full.min.css" />
+    <Content Include="AHAdmin\assets\css\jquery.gritter.css" />
+    <Content Include="AHAdmin\assets\css\select2.css" />
+    <Content Include="AHAdmin\assets\css\ui.jqgrid.css" />
+    <Content Include="AHAdmin\assets\images\gallery\image-1.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\image-2.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\image-3.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\image-4.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\image-5.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\image-6.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\thumb-1.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\thumb-2.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\thumb-3.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\thumb-4.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\thumb-5.jpg" />
+    <Content Include="AHAdmin\assets\images\gallery\thumb-6.jpg" />
+    <Content Include="AHAdmin\assets\js\ace-elements.min.js" />
+    <Content Include="AHAdmin\assets\js\ace-extra.min.js" />
+    <Content Include="AHAdmin\assets\js\ace.min.js" />
+    <Content Include="AHAdmin\assets\js\additional-methods.min.js" />
+    <Content Include="AHAdmin\assets\js\bootbox.min.js" />
+    <Content Include="AHAdmin\assets\js\bootstrap-colorpicker.min.js" />
+    <Content Include="AHAdmin\assets\js\bootstrap-tag.min.js" />
+    <Content Include="AHAdmin\assets\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="AHAdmin\assets\js\bootstrap.min.js" />
+    <Content Include="AHAdmin\assets\js\chosen.jquery.min.js" />
+    <Content Include="AHAdmin\assets\js\date-time\bootstrap-datepicker.min.js" />
+    <Content Include="AHAdmin\assets\js\date-time\bootstrap-timepicker.min.js" />
+    <Content Include="AHAdmin\assets\js\date-time\daterangepicker.min.js" />
+    <Content Include="AHAdmin\assets\js\date-time\moment.min.js" />
+    <Content Include="AHAdmin\assets\js\dropzone.min.js" />
+    <Content Include="AHAdmin\assets\js\excanvas.min.js" />
+    <Content Include="AHAdmin\assets\js\flot\jquery.flot.min.js" />
+    <Content Include="AHAdmin\assets\js\flot\jquery.flot.pie.min.js" />
+    <Content Include="AHAdmin\assets\js\flot\jquery.flot.resize.min.js" />
+    <Content Include="AHAdmin\assets\js\fuelux\data\fuelux.tree-sampledata.js" />
+    <Content Include="AHAdmin\assets\js\fuelux\fuelux.spinner.min.js" />
+    <Content Include="AHAdmin\assets\js\fuelux\fuelux.tree.min.js" />
+    <Content Include="AHAdmin\assets\js\fuelux\fuelux.wizard.min.js" />
+    <Content Include="AHAdmin\assets\js\fullcalendar.min.js" />
+    <Content Include="AHAdmin\assets\js\html5shiv.js" />
+    <Content Include="AHAdmin\assets\js\jqGrid\i18n\grid.locale-cn.js" />
+    <Content Include="AHAdmin\assets\js\jqGrid\i18n\grid.locale-en.js" />
+    <Content Include="AHAdmin\assets\js\jqGrid\jquery.jqGrid.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery-1.10.2.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery-2.0.3.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery-ui-1.10.3.full.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.autosize.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.colorbox-min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.dataTables.bootstrap.js" />
+    <Content Include="AHAdmin\assets\js\jquery.dataTables.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.easy-pie-chart.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.gritter.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.hotkeys.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.inputlimiter.1.3.1.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.knob.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.maskedinput.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.mobile.custom.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.nestable.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.slimscroll.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.sparkline.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="AHAdmin\assets\js\jquery.validate.min.js" />
+    <Content Include="AHAdmin\assets\js\markdown\bootstrap-markdown.min.js" />
+    <Content Include="AHAdmin\assets\js\markdown\markdown.min.js" />
+    <Content Include="AHAdmin\assets\js\respond.min.js" />
+    <Content Include="AHAdmin\assets\js\select2.min.js" />
+    <Content Include="AHAdmin\assets\js\typeahead-bs2.min.js" />
+    <Content Include="AHAdmin\assets\js\x-editable\ace-editable.min.js" />
+    <Content Include="AHAdmin\assets\js\x-editable\bootstrap-editable.min.js" />
+    <Content Include="AHAdmin\ContentRouter.aspx" />
+    <Content Include="AHAdmin\css\family=Open+Sans.css" />
+    <Content Include="AHAdmin\images\collapse.gif" />
+    <Content Include="AHAdmin\images\expand.gif" />
+    <Content Include="AHAdmin\Index.aspx" />
+    <Content Include="AHAdmin\js\AddMenu.js" />
+    <Content Include="AHAdmin\js\Common.js" />
+    <Content Include="AHAdmin\js\login.js" />
+    <Content Include="AHAdmin\js\LTJqGrid.js" />
+    <Content Include="AHAdmin\js\UserManager.js" />
+    <Content Include="AHAdmin\Login.aspx" />
+    <Content Include="AHAdmin\js\AdminMaster.js" />
+    <Content Include="AHAdmin\MenuManager.aspx" />
+    <Content Include="AHAdmin\ModifyPwd.aspx" />
+    <Content Include="AHAdmin\RoleAuth.aspx" />
+    <Content Include="AHAdmin\RoleMembers.aspx" />
+    <Content Include="AHAdmin\SiteConfig.aspx" />
+    <Content Include="AHAdmin\StaticPageManager.aspx" />
+    <Content Include="AHAdmin\testupload.aspx" />
+    <Content Include="AHAdmin\RoleManager.aspx" />
+    <Content Include="AHAdmin\UserManager.aspx" />
+    <Content Include="AnHuiSite\content.aspx" />
+    <Content Include="AnHuiSite\css\index.css" />
+    <Content Include="AnHuiSite\css\lrtk.css" />
+    <Content Include="AnHuiSite\css\main.css" />
+    <Content Include="AnHuiSite\css\tabdemo.css" />
+    <Content Include="AnHuiSite\default.aspx" />
+    <Content Include="AnHuiSite\file.aspx" />
+    <Content Include="AnHuiSite\images\1.gif" />
+    <Content Include="AnHuiSite\images\1.jpg" />
+    <Content Include="AnHuiSite\images\2.gif" />
+    <Content Include="AnHuiSite\images\2.jpg" />
+    <Content Include="AnHuiSite\images\3.gif" />
+    <Content Include="AnHuiSite\images\3.jpg" />
+    <Content Include="AnHuiSite\images\4.gif" />
+    <Content Include="AnHuiSite\images\4.jpg" />
+    <Content Include="AnHuiSite\images\5.gif" />
+    <Content Include="AnHuiSite\images\5.jpg" />
+    <Content Include="AnHuiSite\images\6.gif" />
+    <Content Include="AnHuiSite\images\6.jpg" />
+    <Content Include="AnHuiSite\images\7.gif" />
+    <Content Include="AnHuiSite\images\7.jpg" />
+    <Content Include="AnHuiSite\images\8.gif" />
+    <Content Include="AnHuiSite\images\9.gif" />
+    <Content Include="AnHuiSite\images\ad00.gif" />
+    <Content Include="AnHuiSite\images\ad01.jpg" />
+    <Content Include="AnHuiSite\images\ad02.jpg" />
+    <Content Include="AnHuiSite\images\ad03.jpg" />
+    <Content Include="AnHuiSite\images\ad04.jpg" />
+    <Content Include="AnHuiSite\images\ad05.jpg" />
+    <Content Include="AnHuiSite\images\annh2.png" />
+    <Content Include="AnHuiSite\images\annli.png" />
+    <Content Include="AnHuiSite\images\banner.jpg" />
+    <Content Include="AnHuiSite\images\banner1.jpg" />
+    <Content Include="AnHuiSite\images\bao-2.png" />
+    <Content Include="AnHuiSite\images\bao.png" />
+    <Content Include="AnHuiSite\images\baomi-kl.jpg" />
+    <Content Include="AnHuiSite\images\baomi-t-1.png" />
+    <Content Include="AnHuiSite\images\bg.jpg" />
+    <Content Include="AnHuiSite\images\bodyBg.jpg" />
+    <Content Include="AnHuiSite\images\bodyBg2.jpg" />
+    <Content Include="AnHuiSite\images\bodyBg3.jpg" />
+    <Content Include="AnHuiSite\images\dzjg.jpg" />
+    <Content Include="AnHuiSite\images\endnews.png" />
+    <Content Include="AnHuiSite\images\endnewsh3.png" />
+    <Content Include="AnHuiSite\images\enli.png" />
+    <Content Include="AnHuiSite\images\ftnav.png" />
+    <Content Include="AnHuiSite\images\hd_bg.png" />
+    <Content Include="AnHuiSite\images\hd_dqwz.jpg" />
+    <Content Include="AnHuiSite\images\hd_h.png" />
+    <Content Include="AnHuiSite\images\hot.gif" />
+    <Content Include="AnHuiSite\images\icon-focusimg-btn-png24-20131225.png" />
+    <Content Include="AnHuiSite\images\ink0721hui.png" />
+    <Content Include="AnHuiSite\images\ink0721hui1.png" />
+    <Content Include="AnHuiSite\images\jb_bg.png" />
+    <Content Include="AnHuiSite\images\l-btn.png" />
+    <Content Include="AnHuiSite\images\li.jpg" />
+    <Content Include="AnHuiSite\images\Link\1.jpg" />
+    <Content Include="AnHuiSite\images\Link\2.jpg" />
+    <Content Include="AnHuiSite\images\Link\3.jpg" />
+    <Content Include="AnHuiSite\images\Link\4.jpg" />
+    <Content Include="AnHuiSite\images\Link\5.jpg" />
+    <Content Include="AnHuiSite\images\Link\6.jpg" />
+    <Content Include="AnHuiSite\images\listbg.png" />
+    <Content Include="AnHuiSite\images\lnew_bg.jpg" />
+    <Content Include="AnHuiSite\images\lnew_bg_h.jpg" />
+    <Content Include="AnHuiSite\images\logo.png" />
+    <Content Include="AnHuiSite\images\mainbg.jpg" />
+    <Content Include="AnHuiSite\images\menu_bg.png" />
+    <Content Include="AnHuiSite\images\navline.png" />
+    <Content Include="AnHuiSite\images\nav_bg.png" />
+    <Content Include="AnHuiSite\images\new.gif" />
+    <Content Include="AnHuiSite\images\new.png" />
+    <Content Include="AnHuiSite\images\newh3.jpg" />
+    <Content Include="AnHuiSite\images\newsbg.jpg" />
+    <Content Include="AnHuiSite\images\newsbg.png" />
+    <Content Include="AnHuiSite\images\newsli.png" />
+    <Content Include="AnHuiSite\images\newspic.jpg" />
+    <Content Include="AnHuiSite\images\newspic1.jpg" />
+    <Content Include="AnHuiSite\images\newtab.png" />
+    <Content Include="AnHuiSite\images\newtop_bg.jpg" />
+    <Content Include="AnHuiSite\images\nt-1.png" />
+    <Content Include="AnHuiSite\images\ph.png" />
+    <Content Include="AnHuiSite\images\picbg.png" />
+    <Content Include="AnHuiSite\images\r-btn.png" />
+    <Content Include="AnHuiSite\images\st-2.png" />
+    <Content Include="AnHuiSite\images\t02bg.png" />
+    <Content Include="AnHuiSite\images\top.jpg" />
+    <Content Include="AnHuiSite\images\ts_li.png" />
+    <Content Include="AnHuiSite\images\webicon.gif" />
+    <Content Include="AnHuiSite\images\worm.jpg" />
+    <Content Include="AnHuiSite\js\belatedPNG.js" />
+    <Content Include="AnHuiSite\js\jquery.js" />
+    <Content Include="AnHuiSite\js\lrtk.js" />
+    <Content Include="AnHuiSite\js\modernizr.js" />
+    <Content Include="AnHuiSite\js\png.js" />
+    <Content Include="AnHuiSite\js\silder.js" />
+    <Content Include="AnHuiSite\js\timer.js" />
+    <Content Include="AnHuiSite\votelist.aspx" />
+    <Content Include="AnHuiSite\list.aspx" />
+    <Content Include="AnHuiSite\message.aspx" />
+    <Content Include="AnHuiSite\static.aspx" />
+    <Content Include="AnHuiSite\Style\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="AnHuiSite\Style\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="AnHuiSite\Style\bootstrap\css\bootstrap.css" />
+    <Content Include="AnHuiSite\Style\bootstrap\css\bootstrap.min.css" />
+    <Content Include="AnHuiSite\Style\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AnHuiSite\Style\bootstrap\js\bootstrap.js" />
+    <Content Include="AnHuiSite\Style\bootstrap\js\bootstrap.min.js" />
+    <Content Include="AnHuiSite\Style\bootstrap\js\npm.js" />
+    <Content Include="AnHuiSite\Style\css\bootstrap-responsive.css" />
+    <Content Include="AnHuiSite\Style\css\citynews.css" />
+    <Content Include="AnHuiSite\Style\css\content.css" />
+    <Content Include="AnHuiSite\Style\css\default.css" />
+    <Content Include="AnHuiSite\Style\css\file.css" />
+    <Content Include="AnHuiSite\Style\css\list.css" />
+    <Content Include="AnHuiSite\Style\css\lrtk.css" />
+    <Content Include="AnHuiSite\Style\css\lunboqi.css" />
+    <Content Include="AnHuiSite\Style\css\menu.css" />
+    <Content Include="AnHuiSite\Style\css\message.css" />
+    <Content Include="AnHuiSite\Style\css\rollPic.css" />
+    <Content Include="AnHuiSite\Style\css\static.css" />
+    <Content Include="AnHuiSite\Style\css\tab.css" />
+    <Content Include="AnHuiSite\Style\css\tabPic.css" />
+    <Content Include="AnHuiSite\Style\css\videolist.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\css\bootstrap-ie6.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\css\bootstrap-ie6.min.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\css\bootstrap.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\css\ie.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\img\glyphicons-halflings-8.png" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-affix.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-alert.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-button.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-carousel.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-collapse.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-dropdown.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-modal.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-popover.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-scrollspy.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-tab.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-transition.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap-typeahead.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\bootstrap.min.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\index.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\phantom.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\server.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-affix.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-alert.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-button.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-carousel.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-collapse.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-modal.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-phantom.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-popover.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-tab.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-transition.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\vendor\jquery.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\buttons.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\css-tests.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\css-tests.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\forms-responsive.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\forms.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\navbar-fixed-top.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\navbar-static-top.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tests\navbar.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\buttons.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\css-tests.css" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\css-tests.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\forms-responsive.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\forms.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\navbar-fixed-top.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\navbar-static-top.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tests\navbar.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\bootstrap-slide-01.jpg" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\bootstrap-slide-02.jpg" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\bootstrap-slide-03.jpg" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\browser-icon-chrome.png" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\browser-icon-firefox.png" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\browser-icon-safari.png" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\media.png" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\slide-01.jpg" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\slide-02.jpg" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\img\slide-03.jpg" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\js\bootstrap-ie.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\js\jquery-1.7.2.min.js" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\p-1.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\p-2.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\p-3.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\p-4.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\p-5.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\p-6.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-buttons.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-carousel.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-form.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-grid.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-icons.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-media.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-navs.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-other.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test-tooltip.html" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\test.html" />
+    <Content Include="AnHuiSite\Style\images\anhui.jpg" />
+    <Content Include="AnHuiSite\Style\images\anhui.png" />
+    <Content Include="AnHuiSite\Style\images\bg.png" />
+    <Content Include="AnHuiSite\Style\images\bg_.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\anh.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\ff.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\gd.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\gray\anh.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\gray\ff.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\gray\gd.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\gray\sss.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\gray\zccc.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\gray\zg.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\sss.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\zccc.png" />
+    <Content Include="AnHuiSite\Style\images\friendlink\zg.png" />
+    <Content Include="AnHuiSite\Style\images\hot.gif" />
+    <Content Include="AnHuiSite\Style\images\list\home.png" />
+    <Content Include="AnHuiSite\Style\images\logo.png" />
+    <Content Include="AnHuiSite\Style\images\lunboqi\1.jpg" />
+    <Content Include="AnHuiSite\Style\images\lunboqi\2.jpg" />
+    <Content Include="AnHuiSite\Style\images\lunboqi\3.jpg" />
+    <Content Include="AnHuiSite\Style\images\new.gif" />
+    <Content Include="AnHuiSite\Style\images\newsdefalut.jpg" />
+    <Content Include="AnHuiSite\Style\images\newshome.png" />
+    <Content Include="AnHuiSite\Style\images\rollpic\1.jpg" />
+    <Content Include="AnHuiSite\Style\images\rollpic\2.jpg" />
+    <Content Include="AnHuiSite\Style\images\rollpic\3.jpg" />
+    <Content Include="AnHuiSite\Style\images\rollpic\4.jpg" />
+    <Content Include="AnHuiSite\Style\images\rollpic\icon.png" />
+    <Content Include="AnHuiSite\Style\images\rollpic\icon_ie6.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\1.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\2.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\3.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\4.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\5.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\6.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\7.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\8.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\9.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\依申请公开.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\公众意见箱.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\公开指南.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\公开目录.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\制度文件.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\实施办法.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\市县入口.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\年度报告.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\文件下载.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\管理系统.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\联系方式.png" />
+    <Content Include="AnHuiSite\Style\images\sudoku\视频会议.png" />
+    <Content Include="AnHuiSite\Style\images\tabbg.gif" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl1.jpg" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl2.jpg" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl3.jpg" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl4.jpg" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl5.jpg" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl6.jpg" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl7.jpg" />
+    <Content Include="AnHuiSite\Style\images\tabpic\owl8.jpg" />
+    <Content Include="AnHuiSite\Style\images\tree.png" />
+    <Content Include="AnHuiSite\Style\images\user.png" />
+    <Content Include="AnHuiSite\Style\images\wshd\1.png" />
+    <Content Include="AnHuiSite\Style\images\wshd\2.png" />
+    <Content Include="AnHuiSite\Style\images\wshd\3.png" />
+    <Content Include="AnHuiSite\Style\images\ztbd\1.png" />
+    <Content Include="AnHuiSite\Style\images\ztbd\2.png" />
+    <Content Include="AnHuiSite\Style\images\ztbd\3.png" />
+    <Content Include="AnHuiSite\Style\images\ztbd\4.png" />
+    <Content Include="AnHuiSite\Style\images\ztbd\bszn.png" />
+    <Content Include="AnHuiSite\Style\images\ztbd\lykj.png" />
+    <Content Include="AnHuiSite\Style\images\ztbd\wsbs.png" />
+    <Content Include="AnHuiSite\Style\js\AddCityNews.js" />
+    <Content Include="AnHuiSite\Style\js\AddMessage.js" />
+    <Content Include="AnHuiSite\Style\js\html5shiv.js" />
+    <Content Include="AnHuiSite\Style\js\jquery-1.9.1.js" />
+    <Content Include="AnHuiSite\Style\js\jquery-2.1.4.min.js" />
+    <Content Include="AnHuiSite\Style\js\jquery.1.4.2-min.js" />
+    <Content Include="AnHuiSite\Style\js\jquery.js" />
+    <Content Include="AnHuiSite\Style\js\jquery.tabso_yeso.js" />
+    <Content Include="AnHuiSite\Style\js\lrtk.js" />
+    <Content Include="AnHuiSite\Style\js\lunboqi.js" />
+    <Content Include="AnHuiSite\Style\js\owl.carousel.js" />
+    <Content Include="AnHuiSite\Style\js\respond.min.js" />
+    <Content Include="AnHuiSite\Style\js\rollPic.js" />
+    <Content Include="AnHuiSite\Style\js\swfobject.js" />
+    <Content Include="AnHuiSite\Style\js\tab.js" />
+    <Content Include="AnHuiSite\Style\pciroll\css\pciroll.css" />
+    <Content Include="AnHuiSite\Style\pciroll\js\picroll.js" />
+    <Content Include="AnHuiSite\Style\video\20150812034805.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150812035511.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150812042217.flv" />
+    <Content Include="AnHuiSite\Style\video\20150812042217.wmv" />
+    <Content Include="AnHuiSite\Style\video\20150812043911.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150812044100.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150812044140.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150812051457.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150812051748.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150814085239.wmv" />
+    <Content Include="AnHuiSite\Style\video\20150814090517.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150814090638.mp4" />
+    <Content Include="AnHuiSite\Style\video\20150814092435.wmv" />
+    <Content Include="AnHuiSite\Style\video\20150814092658.mp4" />
+    <Content Include="AnHuiSite\Style\video\CuPlayerMiniV4.swf" />
+    <Content Include="AnHuiSite\Style\video\CuPlayerSetFile.xml" />
+    <Content Include="AnHuiSite\Style\video\CuPlayerSetFileDetail.xml" />
+    <Content Include="AnHuiSite\Style\video\images\Logo.png" />
+    <Content Include="AnHuiSite\Style\video\images\start.jpg" />
+    <Content Include="AnHuiSite\Style\video\images\swfobject.js" />
+    <Content Include="AnHuiSite\Style\video\test.mp4" />
+    <Content Include="AnHuiSite\VideoConference.html" />
+    <Content Include="AnHuiSite\videodetail.aspx" />
+    <Content Include="AnHuiSite\videolist.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="NeatUpload\cancel.png" />
+    <Content Include="NeatUpload\default.css" />
+    <Content Include="NeatUpload\DONT_DELETE.txt" />
+    <Content Include="NeatUpload\Error413.aspx" />
+    <Content Include="NeatUpload\NeatUpload.js" />
+    <Content Include="NeatUpload\Progress.aspx" />
+    <Content Include="NeatUpload\Progress.js" />
+    <Content Include="NeatUpload\refresh.png" />
+    <Content Include="NeatUpload\SmoothProgress.aspx" />
+    <Content Include="NeatUpload\stop_refresh.png" />
+    <Content Include="NeatUpload\SWFUpload-license.txt" />
+    <Content Include="NeatUpload\SWFUpload.js" />
+    <Content Include="NeatUpload\SWFUpload.swf" />
+    <Content Include="packages.config" />
+    <Content Include="AnHuiSite\default20160517.rar" />
+    <Content Include="AnHuiSite\jysite.Master" />
+    <Content Include="AnHuiSite\Style\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="AnHuiSite\Style\bootstrap\css\bootstrap.css.map" />
+    <Content Include="AnHuiSite\Style\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AnHuiSite\Style\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AnHuiSite\Style\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AnHuiSite\Style\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\.travis.yml" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\component.json" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\CONTRIBUTING.md" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\js\.jshintrc" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\accordion.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\alerts.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\bootstrap-ie6.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\breadcrumbs.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\button-groups.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\buttons.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\carousel.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\close.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\code.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\component-animations.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\dropdowns.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\forms.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\grid.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\hero-unit.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\labels-badges.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\layouts.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\media.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\mixins.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\modals.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\navbar.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\navs.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\pager.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\pagination.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\popovers.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\progress-bars.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\reset.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\responsive-1200px-min.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\responsive-767px-max.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\responsive-768px-979px.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\responsive-navbar.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\responsive-utilities.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\responsive.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\scaffolding.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\sprites.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tables.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\thumbnails.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\tooltip.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\type.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\utilities.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\variables.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less-ie6\wells.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\accordion.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\alerts.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\bootstrap.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\breadcrumbs.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\button-groups.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\buttons.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\carousel.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\close.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\code.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\component-animations.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\dropdowns.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\forms.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\grid.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\hero-unit.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\labels-badges.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\layouts.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\media.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\mixins.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\modals.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\navbar.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\navs.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\pager.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\pagination.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\popovers.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\progress-bars.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\reset.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\responsive-1200px-min.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\responsive-767px-max.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\responsive-768px-979px.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\responsive-navbar.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\responsive-utilities.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\responsive.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\scaffolding.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\sprites.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tables.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\thumbnails.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\tooltip.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\type.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\utilities.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\variables.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\less\wells.less" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\LICENSE" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\Makefile" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\package.json" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\README.md" />
+    <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\README.md" />
+    <Content Include="AnHuiSite\Style\video\images\Logo.psd" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <None Include="Scripts\jquery-2.1.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AHAdmin\AddMenu.aspx.cs">
+      <DependentUpon>AddMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\AddMenu.aspx.designer.cs">
+      <DependentUpon>AddMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\AddRole.aspx.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\AddRole.aspx.designer.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\assets\ueditor\net\Config.cs" />
+    <Compile Include="AHAdmin\assets\ueditor\net\ConfigHandler.cs" />
+    <Compile Include="AHAdmin\assets\ueditor\net\CrawlerHandler.cs" />
+    <Compile Include="AHAdmin\assets\ueditor\net\Handler.cs" />
+    <Compile Include="AHAdmin\assets\ueditor\net\ListFileHandler.cs" />
+    <Compile Include="AHAdmin\assets\ueditor\net\NotSupportedHandler.cs" />
+    <Compile Include="AHAdmin\assets\ueditor\net\PathFormater.cs" />
+    <Compile Include="AHAdmin\assets\ueditor\net\UEditorHandler.ashx.cs">
+      <DependentUpon>UEditorHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\assets\ueditor\net\UploadHandler.cs" />
+    <Compile Include="AHAdmin\EditFiles.aspx.cs">
+      <DependentUpon>EditFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\EditFiles.aspx.designer.cs">
+      <DependentUpon>EditFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\EditLinks.aspx.cs">
+      <DependentUpon>EditLinks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\EditLinks.aspx.designer.cs">
+      <DependentUpon>EditLinks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\EditMessages.aspx.cs">
+      <DependentUpon>EditMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\EditMessages.aspx.designer.cs">
+      <DependentUpon>EditMessages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\EditNews.aspx.cs">
+      <DependentUpon>EditNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\EditNews.aspx.designer.cs">
+      <DependentUpon>EditNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\FileManager.aspx.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\FileManager.aspx.designer.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\CityNews.ashx.cs">
+      <DependentUpon>CityNews.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\FilesHandler.ashx.cs">
+      <DependentUpon>FilesHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\Links.ashx.cs">
+      <DependentUpon>Links.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\Message.ashx.cs">
+      <DependentUpon>Message.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\News.ashx.cs">
+      <DependentUpon>News.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\Role.ashx.cs">
+      <DependentUpon>Role.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\SiteConfig.ashx.cs">
+      <DependentUpon>SiteConfig.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\StaticPage.ashx.cs">
+      <DependentUpon>StaticPage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\LinksManager.aspx.cs">
+      <DependentUpon>LinksManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\LinksManager.aspx.designer.cs">
+      <DependentUpon>LinksManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\MessagesManager.aspx.cs">
+      <DependentUpon>MessagesManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\MessagesManager.aspx.designer.cs">
+      <DependentUpon>MessagesManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\NewsManager.aspx.cs">
+      <DependentUpon>NewsManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\NewsManager.aspx.designer.cs">
+      <DependentUpon>NewsManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\ContentRouter.aspx.cs">
+      <DependentUpon>ContentRouter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\ContentRouter.aspx.designer.cs">
+      <DependentUpon>ContentRouter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\ContentTypes.ashx.cs">
+      <DependentUpon>ContentTypes.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\Menus.ashx.cs">
+      <DependentUpon>Menus.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\Users.ashx.cs">
+      <DependentUpon>Users.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\MenuManager.aspx.cs">
+      <DependentUpon>MenuManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\MenuManager.aspx.designer.cs">
+      <DependentUpon>MenuManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\ModifyPwd.aspx.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\ModifyPwd.aspx.designer.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\RoleAuth.aspx.cs">
+      <DependentUpon>RoleAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\RoleAuth.aspx.designer.cs">
+      <DependentUpon>RoleAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\RoleMembers.aspx.cs">
+      <DependentUpon>RoleMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\RoleMembers.aspx.designer.cs">
+      <DependentUpon>RoleMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\SiteConfig.aspx.cs">
+      <DependentUpon>SiteConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\SiteConfig.aspx.designer.cs">
+      <DependentUpon>SiteConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\StaticPageManager.aspx.cs">
+      <DependentUpon>StaticPageManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\StaticPageManager.aspx.designer.cs">
+      <DependentUpon>StaticPageManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\testupload.aspx.cs">
+      <DependentUpon>testupload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\testupload.aspx.designer.cs">
+      <DependentUpon>testupload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\RoleManager.aspx.cs">
+      <DependentUpon>RoleManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\RoleManager.aspx.designer.cs">
+      <DependentUpon>RoleManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\UserManager.aspx.cs">
+      <DependentUpon>UserManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\UserManager.aspx.designer.cs">
+      <DependentUpon>UserManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\Utilities\FileHelper.cs" />
+    <Compile Include="AnHuiSite\content.aspx.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\content.aspx.designer.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\file.aspx.cs">
+      <DependentUpon>file.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\file.aspx.designer.cs">
+      <DependentUpon>file.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\jysite.Master.cs">
+      <DependentUpon>jysite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\jysite.Master.designer.cs">
+      <DependentUpon>jysite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\votelist.aspx.cs">
+      <DependentUpon>votelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\votelist.aspx.designer.cs">
+      <DependentUpon>votelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\list.aspx.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\list.aspx.designer.cs">
+      <DependentUpon>list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\message.aspx.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\message.aspx.designer.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\static.aspx.cs">
+      <DependentUpon>static.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\static.aspx.designer.cs">
+      <DependentUpon>static.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\videodetail.aspx.cs">
+      <DependentUpon>videodetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\videodetail.aspx.designer.cs">
+      <DependentUpon>videodetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHuiSite\videolist.aspx.cs">
+      <DependentUpon>videolist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\videolist.aspx.designer.cs">
+      <DependentUpon>videolist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AHAdmin\assets\avatars\Thumbs.db" />
+    <Content Include="AHAdmin\assets\css\images\Thumbs.db" />
+    <Content Include="AHAdmin\assets\font\fontawesome-webfont.woff" />
+    <Content Include="AHAdmin\Admin.Master" />
+    <Content Include="AHAdmin\handlers\Login.ashx" />
+    <Content Include="AHAdmin\handlers\Users.ashx" />
+    <Content Include="AHAdmin\handlers\ContentTypes.ashx" />
+    <Content Include="AHAdmin\handlers\Menus.ashx" />
+    <Content Include="AHAdmin\handlers\News.ashx" />
+    <Content Include="AHAdmin\assets\ueditor\net\UEditorHandler.ashx" />
+    <Content Include="AHAdmin\assets\ueditor\net\config.json" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="AHAdmin\assets\ueditor\third-party\video-js\font\vjs.woff" />
+    <Content Include="AHAdmin\handlers\Message.ashx" />
+    <Content Include="AHAdmin\handlers\Links.ashx" />
+    <Content Include="AHAdmin\handlers\FilesHandler.ashx" />
+    <Content Include="AHAdmin\handlers\StaticPage.ashx" />
+    <Content Include="AHAdmin\handlers\CityNews.ashx" />
+    <Content Include="NeatUpload\MultiRequestUploadHandler.ashx" />
+    <Content Include="AHAdmin\handlers\Role.ashx" />
+    <Content Include="AHAdmin\handlers\SiteConfig.ashx" />
+    <None Include="NeatUpload\NeatUploadConfig.xsd" />
+    <Content Include="NeatUpload\ProgressJsonHandler.ashx" />
+    <Content Include="NeatUpload\UploadStateStoreHandler.ashx" />
+    <Content Include="NeatUpload\Web.config" />
+    <None Include="Properties\PublishProfiles\AnHuiSitePublic.pubxml" />
+    <None Include="Properties\PublishProfiles\fangzhixiehui.pubxml" />
+    <None Include="Properties\PublishProfiles\public.pubxml" />
+    <None Include="Properties\PublishProfiles\site.pubxml" />
+    <None Include="Properties\PublishProfiles\防治协会.pubxml" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AHAdmin\assets\ueditor\net\upload\2015-07-14\" />
+    <Folder Include="AHAdmin\Uploads\Files\" />
+    <Folder Include="AHAdmin\Uploads\Images\" />
+    <Folder Include="AHAdmin\Uploads\Video\" />
+    <Folder Include="AnHuiSite\Style\pciroll\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnHuiSiteBLL\AnHuiSiteBLL.csproj">
+      <Project>{85b568cb-3a7a-4ed6-81c7-c241f6d808be}</Project>
+      <Name>AnHuiSiteBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnHuiSiteModel\AnHuiSiteModel.csproj">
+      <Project>{236fadec-40f2-4fb3-93bb-7e36d299b83b}</Project>
+      <Name>AnHuiSiteModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12389/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

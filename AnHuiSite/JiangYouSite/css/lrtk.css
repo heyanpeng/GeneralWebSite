@@ -1,0 +1,23 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td,em{-webkit-text-size-adjust:none;margin:0;padding:0;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);font-size:12px;font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;}
+html,body{height:100%;}
+img,input,button,a,select,textarea{margin:0;padding:0;resize:none;border:none;outline:none;} 
+ol,ul{list-style:none;} 
+h1,h2,h3,h4,h5,h6,p,em,i,b,em{font-size:100%;word-wrap:break-word;font-weight:normal;font-style:normal;}
+a:active, a:focus{outline:none;}
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0;}
+*html{background-image:url(about:blank);background-attachment:fixed;} /* 修正IE6振动bug */
+
+/* slide */
+.slide-main{height:220px;position:relative;}
+.prev,.next{display:block;width:44px;height:44px;position:absolute;z-index:222;top:90px;overflow:hidden;cursor:pointer;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60);_border:1px solid none;}
+.prev{left:20px;}
+.next{right:20px;}
+.prev:hover,.next:hover,.nav-main a:hover,.nav-main a.cur{opacity:1;-moz-opacity:1;filter:alpha(opacity=100);}
+.item{display:block;width:1100px;height:5px;position:absolute;z-index:124;top:190px;left:0;text-align:center;}
+.item a{display:inline-block;width:24px;height:5px;margin-right:11px;background:#333;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60);overflow:hidden;}
+.item a.cur{background:#fff;}
+.slide-box,.slide{display:block;width:1100px;height:280px;overflow:hidden;}
+.slide-box{position:relative;}
+.slide{display:none;height:490px;padding-top:0px;background:#ff6900;position:relative;position:absolute;z-index:8;}
+
+/* 懒人图库 搜集整理 www.lanrentuku.com */

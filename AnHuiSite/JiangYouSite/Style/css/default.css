@@ -1,0 +1,188 @@
+﻿body {
+    background: url("../images/bg.png") center top no-repeat;
+}
+
+.copyright {
+    font-family: Microsoft YaHei;
+}
+
+.friendLink {
+    margin-top: 10px;
+}
+
+    .friendLink img {
+        margin: 5px;
+        border: 1px solid gray;
+        height: 40px;
+        width: 164px;
+    }
+
+.friendLinkList {
+    height: 30px;
+    border: 0px solid red;
+}
+
+    .friendLinkList .friendLinkddl {
+        margin-top: 4px;
+        margin-right: 60px;
+    }
+
+.sudokuZWGK {
+    width: 300px;
+    border: 0px solid green;
+    margin-left: 0px;
+    text-align: center;
+    font-family: Microsoft YaHei;
+}
+
+    .sudokuZWGK tr {
+        height: 110px;
+    }
+
+        .sudokuZWGK tr td {
+            width: 100px;
+        }
+
+    .sudokuZWGK a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .sudokuZWGK a:hover {
+            font-weight: bold;
+            color: #34972b;
+        }
+
+            .sudokuZWGK a:hover img {
+                width: 85px;
+                height: 85px;
+                font-weight: bold;
+            }
+
+.sudokuZTBD {
+    width: 300px;
+    border: 0px solid green;
+    margin-left: 0px;
+    text-align: center;
+    font-family: Microsoft YaHei;
+}
+
+    .sudokuZTBD tr {
+        height: 120px;
+    }
+
+        .sudokuZTBD tr td {
+            width: 140px;
+        }
+
+    .sudokuZTBD a img {
+        width: 130px;
+        height: 105px;
+        font-weight: bold;
+    }
+
+    .sudokuZTBD a:hover img {
+        width: 135px;
+        height: 110px;
+        font-weight: bold;
+    }
+
+.sudokuWSHD tr {
+    border: 0px solid red;
+}
+
+    .sudokuWSHD tr td {
+        width: 300px;
+        height: 80px;
+    }
+
+.sudokuWSHD a img {
+    width: 300px;
+    height: 65px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.sudokuWSHD a:hover img {
+    width: 305px;
+    height: 70px;
+    font-weight: bold;
+}
+
+.logotree {
+    margin-top: 0px;
+    float: right;
+    width: 338px;
+}
+
+.SHIXIANXINWEN table {
+    width: 330px;
+    height: 166px;
+    border: 3px solid #d4f0fe;
+}
+
+    .SHIXIANXINWEN table tr {
+        height: 55px;
+    }
+
+        .SHIXIANXINWEN table tr td {
+            width: 70px;
+            text-align: center;
+            border: 1px solid #d4f0fe;
+        }
+
+            .SHIXIANXINWEN table tr td:hover {
+                background-color: #8ed0f1;
+            }
+
+                .SHIXIANXINWEN table tr td:hover a {
+                    color: white;
+                    font-weight: bold;
+                }
+
+            .SHIXIANXINWEN table tr td a {
+                font-family: 微软雅黑;
+                color: #646464;
+                font-size: 16px;
+            }
+
+                .SHIXIANXINWEN table tr td a:hover {
+                    color: white;
+                    text-decoration: none;
+                }
+
+.zuixinyaowen {
+    border: 0px solid red;
+    height: 40px;
+    line-height: 50px;
+    font-family: Microsoft YaHei;
+}
+
+    .zuixinyaowen span {
+        float: right;
+        border: 0px solid red;
+        height: 40px;
+        width: auto;
+    }
+
+        .zuixinyaowen span .btnSearch {
+            height: 30px;
+            margin-bottom: 9px;
+            margin-left: 5px;
+            margin-right: -15px;
+        }
+
+    .zuixinyaowen a {
+        color: #209062;
+    }
+
+.cityMap {
+    background: url("..Style/images/anhui.jpg;") center top no-repeat;
+}
+
+
+/*bt*/
+.btn-info{
+    background-color:#69c421;
+    border-color:#69c421;
+}
