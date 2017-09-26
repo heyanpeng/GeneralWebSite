@@ -33,13 +33,14 @@ namespace AnHuiSiteDAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into T_Vote(");
-            strSql.Append("Id,Question,Status,BeginDateTime,EndDateTime,IsMultiSelect,IsPublic,UId,CreateTime,ModifyTime,IsLimitIP,IsLimitTime");
+            strSql.Append("Id,T_M_Id,Question,Status,BeginDateTime,EndDateTime,IsMultiSelect,IsPublic,UId,CreateTime,ModifyTime,IsLimitIP,IsLimitTime");
             strSql.Append(") values (");
-            strSql.Append("@Id,@Question,@Status,@BeginDateTime,@EndDateTime,@IsMultiSelect,@IsPublic,@UId,@CreateTime,@ModifyTime,@IsLimitIP,@IsLimitTime");
+            strSql.Append("@Id,@T_M_Id,@Question,@Status,@BeginDateTime,@EndDateTime,@IsMultiSelect,@IsPublic,@UId,@CreateTime,@ModifyTime,@IsLimitIP,@IsLimitTime");
             strSql.Append(") ");
 
             SqlParameter[] parameters = {
-                        new SqlParameter("@Id", SqlDbType.VarChar,32) ,
+                        new SqlParameter("@Id", SqlDbType.VarChar,32) ,    
+                        new SqlParameter("@T_M_Id", SqlDbType.VarChar,32) ,    
                         new SqlParameter("@Question", SqlDbType.VarChar,100) ,
                         new SqlParameter("@Status", SqlDbType.Int,4) ,
                         new SqlParameter("@BeginDateTime", SqlDbType.DateTime) ,
@@ -55,17 +56,18 @@ namespace AnHuiSiteDAL
             };
 
             parameters[0].Value = model.Id;
-            parameters[1].Value = model.Question;
-            parameters[2].Value = model.Status;
-            parameters[3].Value = model.BeginDateTime;
-            parameters[4].Value = model.EndDateTime;
-            parameters[5].Value = model.IsMultiSelect;
-            parameters[6].Value = model.IsPublic;
-            parameters[7].Value = model.UId;
-            parameters[8].Value = model.CreateTime;
-            parameters[9].Value = model.ModifyTime;
-            parameters[10].Value = model.IsLimitIP;
-            parameters[11].Value = model.IsLimitTime;
+            parameters[1].Value = model.T_M_Id;
+            parameters[2].Value = model.Question;
+            parameters[3].Value = model.Status;
+            parameters[4].Value = model.BeginDateTime;
+            parameters[5].Value = model.EndDateTime;
+            parameters[6].Value = model.IsMultiSelect;
+            parameters[7].Value = model.IsPublic;
+            parameters[8].Value = model.UId;
+            parameters[9].Value = model.CreateTime;
+            parameters[10].Value = model.ModifyTime;
+            parameters[11].Value = model.IsLimitIP;
+            parameters[12].Value = model.IsLimitTime;
             DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
 
         }
@@ -80,6 +82,7 @@ namespace AnHuiSiteDAL
             strSql.Append("update T_Vote set ");
 
             strSql.Append(" Id = @Id , ");
+            strSql.Append(" T_M_Id = @T_M_Id , ");
             strSql.Append(" Question = @Question , ");
             strSql.Append(" Status = @Status , ");
             strSql.Append(" BeginDateTime = @BeginDateTime , ");
@@ -94,7 +97,8 @@ namespace AnHuiSiteDAL
             strSql.Append(" where Id=@Id  ");
 
             SqlParameter[] parameters = {
-                        new SqlParameter("@Id", SqlDbType.VarChar,32) ,
+                        new SqlParameter("@Id", SqlDbType.VarChar,32) ,  
+                        new SqlParameter("@T_M_Id", SqlDbType.VarChar,32) ,     
                         new SqlParameter("@Question", SqlDbType.VarChar,100) ,
                         new SqlParameter("@Status", SqlDbType.Int,4) ,
                         new SqlParameter("@BeginDateTime", SqlDbType.DateTime) ,
@@ -110,17 +114,18 @@ namespace AnHuiSiteDAL
             };
 
             parameters[0].Value = model.Id;
-            parameters[1].Value = model.Question;
-            parameters[2].Value = model.Status;
-            parameters[3].Value = model.BeginDateTime;
-            parameters[4].Value = model.EndDateTime;
-            parameters[5].Value = model.IsMultiSelect;
-            parameters[6].Value = model.IsPublic;
-            parameters[7].Value = model.UId;
-            parameters[8].Value = model.CreateTime;
-            parameters[9].Value = model.ModifyTime;
-            parameters[10].Value = model.IsLimitIP;
-            parameters[11].Value = model.IsLimitTime;
+            parameters[1].Value = model.T_M_Id;
+            parameters[2].Value = model.Question;
+            parameters[3].Value = model.Status;
+            parameters[4].Value = model.BeginDateTime;
+            parameters[5].Value = model.EndDateTime;
+            parameters[6].Value = model.IsMultiSelect;
+            parameters[7].Value = model.IsPublic;
+            parameters[8].Value = model.UId;
+            parameters[9].Value = model.CreateTime;
+            parameters[10].Value = model.ModifyTime;
+            parameters[11].Value = model.IsLimitIP;
+            parameters[12].Value = model.IsLimitTime;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -167,7 +172,7 @@ namespace AnHuiSiteDAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select Id, Question, Status, BeginDateTime, EndDateTime, IsMultiSelect, IsPublic, UId, CreateTime, ModifyTime, IsLimitIP, IsLimitTime  ");
+            strSql.Append("select Id,T_M_Id, Question, Status, BeginDateTime, EndDateTime, IsMultiSelect, IsPublic, UId, CreateTime, ModifyTime, IsLimitIP, IsLimitTime  ");
             strSql.Append("  from T_Vote ");
             strSql.Append(" where Id=@Id ");
             SqlParameter[] parameters = {
@@ -181,6 +186,7 @@ namespace AnHuiSiteDAL
             if (ds.Tables[0].Rows.Count > 0)
             {
                 model.Id = ds.Tables[0].Rows[0]["Id"].ToString();
+                model.T_M_Id = ds.Tables[0].Rows[0]["T_M_Id"].ToString();
                 model.Question = ds.Tables[0].Rows[0]["Question"].ToString();
                 if (ds.Tables[0].Rows[0]["Status"].ToString() != "")
                 {
@@ -265,7 +271,22 @@ namespace AnHuiSiteDAL
             return DbHelperSQL.Query(strSql.ToString());
         }
 
-
+        public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT * FROM ( ");
+            strSql.Append(" SELECT ROW_NUMBER() OVER (");
+            if (!string.IsNullOrEmpty(orderby.Trim()))
+                strSql.Append("order by T." + orderby);
+            else
+                strSql.Append("order by T.CreateTime ASC");
+            strSql.Append(")AS Row, T.*  from T_Vote T ");
+            if (!string.IsNullOrEmpty(strWhere.Trim()))
+                strSql.Append(" WHERE " + strWhere);
+            strSql.Append(" ) TT");
+            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+            return DbHelperSQL.Query(strSql.ToString());
+        }
     }
 }
 

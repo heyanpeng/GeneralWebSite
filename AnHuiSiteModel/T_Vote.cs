@@ -18,6 +18,15 @@ namespace AnHuiSiteModel
             set { _id = value; }
         }
         /// <summary>
+        /// MenuId
+        /// </summary>		
+        private string _T_M_Id;
+        public string T_M_Id
+        {
+            get { return _T_M_Id; }
+            set { _T_M_Id = value; }
+        }
+        /// <summary>
         /// 调查内容
         /// </summary>		
         private string _question;

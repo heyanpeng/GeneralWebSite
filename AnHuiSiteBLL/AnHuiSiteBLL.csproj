@@ -58,8 +58,8 @@
     <Compile Include="T_StaticPageManager.cs" />
     <Compile Include="T_UserManager.cs" />
     <Compile Include="T_UserRoleManager.cs" />
-    <Compile Include="T_Vote.cs" />
-    <Compile Include="T_VoteItem.cs" />
+    <Compile Include="T_VoteManager.cs" />
+    <Compile Include="T_VoteItemManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnHuiSiteDAL\AnHuiSiteDAL.csproj">

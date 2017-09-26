@@ -15,6 +15,9 @@ namespace AnHuiSite
         T_MenusManager menuManager = new T_MenusManager();
         T_NewsManager newsManager = new T_NewsManager();
         T_LinksManager linksManager = new T_LinksManager();
+
+        T_VoteManager voteManager = new T_VoteManager();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             BindSiteConfig();
@@ -39,7 +42,7 @@ namespace AnHuiSite
                     if ((lblParent.Text == "1") && menuManager.GetModel(id).ParentId != string.Empty)
                     {
                         litChildTitle.Text = menuManager.GetModel(menu.ParentId).MenuName;
-                        lblWh.Text = "IsCheck = 1 and T_M_Id = '" + lblId.Text + "'";
+                        lblWh.Text = "Status!=5 and T_M_Id = '" + lblId.Text + "'";
                         lblOrderBy.Text = "CreateTime desc";
                         anp.RecordCount = newsManager.GetList("T_M_Id = '" + lblId.Text + "' order by CreateTime desc").Tables[0].Rows.Count;
                         rptChildsdt = menuManager.GetList("Id in (select id from T_Menus where ParentId = ( select parentid from T_Menus where id ='" + lblId.Text + "')) Order by SortIndex desc").Tables[0];
@@ -47,7 +50,7 @@ namespace AnHuiSite
                     else
                     {
                         litChildTitle.Text = menu.MenuName;
-                        lblWh.Text = "IsCheck = 1 and T_M_Id in (select id from T_Menus where parentid =  '" + lblId.Text + "')";
+                        lblWh.Text = "Status!=5 and T_M_Id in (select id from T_Menus where parentid =  '" + lblId.Text + "')";
                         lblOrderBy.Text = "CreateTime desc";
                         anp.RecordCount = newsManager.GetList("T_M_Id in (select id from T_Menus where parentid =  '" + lblId.Text + "') order by CreateTime desc").Tables[0].Rows.Count;
                         rptChildsdt = menuManager.GetList("Id in (select id from T_Menus where ParentId = ( select id from T_Menus where id ='" + lblId.Text + "')) Order by SortIndex desc").Tables[0];
@@ -160,18 +163,18 @@ namespace AnHuiSite
             object keyword = Request.QueryString["keyword"];
             if (keyword != null)
             {
-                anp.RecordCount = newsManager.GetList("Title like '%" + keyword + "%'").Tables[0].Rows.Count;
+                anp.RecordCount = voteManager.GetList("Title like '%" + keyword + "%'").Tables[0].Rows.Count;
                 int pagesize = anp.PageSize;
                 int pageindex = anp.CurrentPageIndex;
-                rptNewsList.DataSource = newsManager.GetListByPage("Title like '%" + keyword + "%'", "CreateTime desc", (pageindex - 1) * pagesize + 1, pagesize * pageindex);
-                rptNewsList.DataBind();
+                rptVoteList.DataSource = voteManager.GetListByPage("Title like '%" + keyword + "%'", "CreateTime desc", (pageindex - 1) * pagesize + 1, pagesize * pageindex);
+                rptVoteList.DataBind();
             }
             else
             {
                 int pagesize = anp.PageSize;
                 int pageindex = anp.CurrentPageIndex;
-                rptNewsList.DataSource = newsManager.GetListByPage(lblWh.Text, lblOrderBy.Text, (pageindex - 1) * pagesize + 1, pagesize * pageindex);
-                rptNewsList.DataBind();
+                rptVoteList.DataSource = voteManager.GetListByPage(lblWh.Text, lblOrderBy.Text, (pageindex - 1) * pagesize + 1, pagesize * pageindex);
+                rptVoteList.DataBind();
             }
         }
         protected void anp_PageChanged(object sender, EventArgs e)
@@ -190,6 +193,51 @@ namespace AnHuiSite
             {
                 Response.Redirect("404.html");
             }
+        }
+
+        public string ReturnStatus(int pStatus, DateTime pBeginDateTime, DateTime pEndDateTime)
+        {
+            if (pStatus == 1)
+            {
+                if (pBeginDateTime > DateTime.Today)
+                {
+                    pStatus = 1;
+                }
+                if (pBeginDateTime <= DateTime.Today && DateTime.Today <= pEndDateTime)
+                {
+                    pStatus = 3;
+                }
+                if (pEndDateTime < DateTime.Today)
+                {
+                    pStatus = 4;
+                }
+            }
+            string statusStr = string.Empty;
+            //状态 1：自动根据时间计算 2：未开启 3：进行中 4：已结束 5：关闭
+            switch (pStatus)
+            {
+                case 2:
+                    {
+                        statusStr = "<label>未开启<label>";
+                        break;
+                    }
+                case 3:
+                    {
+                        statusStr = "<label style='color:red;'>进行中<label>";
+                        break;
+                    }
+                case 4:
+                    {
+                        statusStr = "<label style='color:gray;'>已结束<label>";
+                        break;
+                    }
+                case 5:
+                    {
+                        statusStr = "<label>关闭<label>";
+                        break;
+                    }
+            }
+            return statusStr;
         }
     }
 }

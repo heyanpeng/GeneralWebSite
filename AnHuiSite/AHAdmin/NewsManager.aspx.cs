@@ -60,11 +60,11 @@ namespace AnHuiSite.AHAdmin
             }
             if (isCheck == "true")
             {
-                data = newsManager.GetModelList(100, "T_M_Id='" + mId + "'", "IsTop desc,CreateTime desc");
+                data = newsManager.GetModelList(100000, "T_M_Id='" + mId + "'", "IsTop desc,CreateTime desc");
             }
             else if (isCheck == "false")
             {
-                data = newsManager.GetModelList(100, "T_M_Id='" + mId + "' and UId = '" + uId + "'", "IsTop desc,CreateTime desc");
+                data = newsManager.GetModelList(100000, "T_M_Id='" + mId + "' and UId = '" + uId + "'", "IsTop desc,CreateTime desc");
             }
             gridContent.DataSource = data;
             gridContent.DataKeyNames = new string[] { "Id" };

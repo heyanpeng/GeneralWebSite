@@ -5,11 +5,11 @@ using System.Data;
 namespace AnHuiSiteBLL
 {
     //T_VoteItem
-    public partial class T_VoteItem
+    public partial class T_VoteItemManager
     {
 
         private readonly AnHuiSiteDAL.T_VoteItem dal = new AnHuiSiteDAL.T_VoteItem();
-        public T_VoteItem()
+        public T_VoteItemManager()
         { }
 
         #region  Method

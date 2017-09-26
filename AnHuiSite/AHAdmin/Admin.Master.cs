@@ -188,6 +188,9 @@ namespace AnHuiSite.AHAdmin
                 case "dad4469e96c24175bec133935bafa6a3"://图库
                     menu.MenuUrl = "NewsManager.aspx?mId=" + menu.Id + "&mName=" + menu.MenuName + "&tId=" + menu.TypeId;
                     break;
+                case "b2ee9236d5914caabfe052d79e74e6c9"://投票
+                    menu.MenuUrl = "VoteManager.aspx?mId=" + menu.Id + "&mName=" + menu.MenuName + "&tId=" + menu.TypeId;
+                    break;
                 default:
                     break;
             }

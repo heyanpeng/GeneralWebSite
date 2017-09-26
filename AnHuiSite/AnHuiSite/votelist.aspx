@@ -113,14 +113,13 @@
                     </div>
                     <div>
                         <ul>
-                            <asp:Repeater runat="server" ID="rptNewsList">
+                            <asp:Repeater runat="server" ID="rptVoteList">
                                 <ItemTemplate>
                                     <li><span>▪&nbsp;</span>
                                         <%#GetParentNav(Eval("T_M_Id").ToString()) %>
-                                        <a href="content.aspx?Id=<%#Eval("Id") %>" title="<%#Eval("Title") %>" target="_blank">
-                                            <%#AnHuiSite.Common.SubStr(Eval("Title").ToString(),38) %>
-                                            <asp:Image runat="server" ImageUrl="Style/images/new.gif" Visible='<%# Convert.ToBoolean(Eval("IsNew")) %>' />
-                                            <asp:Image runat="server" ImageUrl="Style/images/hot.gif" Visible='<%# Convert.ToBoolean(Eval("IsHot")) %>' />
+                                        <a href="votecontent.aspx?Id=<%#Eval("Id") %>" title="<%#Eval("Question") %>" target="_blank">
+                                            <%#AnHuiSite.Common.SubStr(Eval("Question").ToString(),38) %>
+                                            <%#ReturnStatus(int.Parse(Eval("Status").ToString()),DateTime.Parse(Eval("BeginDateTime").ToString()),DateTime.Parse(Eval("EndDateTime").ToString())) %>
                                         </a>
                                         <span class="newsdatetime"><%#Eval("CreateTime") %></span>
                                     </li>

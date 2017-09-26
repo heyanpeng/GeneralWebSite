@@ -33,3 +33,10 @@ F:\GeneralWebSite\AnHuiSiteDAL\bin\Debug\AnHuiSiteModel.pdb
 F:\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.csprojResolveAssemblyReference.cache
 F:\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.dll
 F:\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.pdb
+F:\git\GeneralWebSite\AnHuiSiteDAL\bin\Debug\AnHuiSiteDAL.dll
+F:\git\GeneralWebSite\AnHuiSiteDAL\bin\Debug\AnHuiSiteDAL.pdb
+F:\git\GeneralWebSite\AnHuiSiteDAL\bin\Debug\AnHuiSiteModel.dll
+F:\git\GeneralWebSite\AnHuiSiteDAL\bin\Debug\AnHuiSiteModel.pdb
+F:\git\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.csprojResolveAssemblyReference.cache
+F:\git\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.dll
+F:\git\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.pdb

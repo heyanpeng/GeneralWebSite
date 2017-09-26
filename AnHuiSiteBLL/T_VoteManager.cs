@@ -5,11 +5,11 @@ using System.Data;
 namespace AnHuiSiteBLL
 {
     //T_Vote
-    public partial class T_Vote
+    public partial class T_VoteManager
     {
 
         private readonly AnHuiSiteDAL.T_Vote dal = new AnHuiSiteDAL.T_Vote();
-        public T_Vote()
+        public T_VoteManager()
         { }
 
         #region  Method
@@ -92,6 +92,10 @@ namespace AnHuiSiteBLL
                 {
                     model = new AnHuiSiteModel.T_Vote();
                     model.Id = dt.Rows[n]["Id"].ToString();
+                    if (dt.Rows[n]["T_M_Id"].ToString() != "")
+                    {
+                        model.T_M_Id = dt.Rows[n]["T_M_Id"].ToString();
+                    }
                     model.Question = dt.Rows[n]["Question"].ToString();
                     if (dt.Rows[n]["Status"].ToString() != "")
                     {
@@ -147,5 +151,9 @@ namespace AnHuiSiteBLL
         }
         #endregion
 
+        public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
+        {
+            return dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
+        }
     }
 }

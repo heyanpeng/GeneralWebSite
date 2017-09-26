@@ -21,3 +21,8 @@ F:\GeneralWebSite\AnHuiSiteModel\bin\Debug\AnHuiSiteModel.dll
 F:\GeneralWebSite\AnHuiSiteModel\bin\Debug\AnHuiSiteModel.pdb
 F:\GeneralWebSite\AnHuiSiteModel\obj\Debug\AnHuiSiteModel.dll
 F:\GeneralWebSite\AnHuiSiteModel\obj\Debug\AnHuiSiteModel.pdb
+F:\git\GeneralWebSite\AnHuiSiteModel\bin\Debug\AnHuiSiteModel.dll
+F:\git\GeneralWebSite\AnHuiSiteModel\bin\Debug\AnHuiSiteModel.pdb
+F:\git\GeneralWebSite\AnHuiSiteModel\obj\Debug\AnHuiSiteModel.csprojResolveAssemblyReference.cache
+F:\git\GeneralWebSite\AnHuiSiteModel\obj\Debug\AnHuiSiteModel.dll
+F:\git\GeneralWebSite\AnHuiSiteModel\obj\Debug\AnHuiSiteModel.pdb
