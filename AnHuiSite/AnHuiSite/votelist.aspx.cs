@@ -195,6 +195,51 @@ namespace AnHuiSite
             }
         }
 
+        public string ReturnUrl(int pStatus, DateTime pBeginDateTime, DateTime pEndDateTime)
+        {
+            if (pStatus == 1)
+            {
+                if (pBeginDateTime > DateTime.Today)
+                {
+                    pStatus = 1;
+                }
+                if (pBeginDateTime <= DateTime.Today && DateTime.Today <= pEndDateTime)
+                {
+                    pStatus = 3;
+                }
+                if (pEndDateTime < DateTime.Today)
+                {
+                    pStatus = 4;
+                }
+            }
+            string statusStr = string.Empty;
+            //状态 1：自动根据时间计算 2：未开启 3：进行中 4：已结束 5：关闭
+            switch (pStatus)
+            {
+                case 2:
+                    {
+                        statusStr = "javascript:void(0);";
+                        break;
+                    }
+                case 3:
+                    {
+                        statusStr = "votecontent.aspx";
+                        break;
+                    }
+                case 4:
+                    {
+                        statusStr = "voteresult.aspx";
+                        break;
+                    }
+                case 5:
+                    {
+                        statusStr = "#";
+                        break;
+                    }
+            }
+            return statusStr;
+        }
+
         public string ReturnStatus(int pStatus, DateTime pBeginDateTime, DateTime pEndDateTime)
         {
             if (pStatus == 1)
@@ -218,7 +263,7 @@ namespace AnHuiSite
             {
                 case 2:
                     {
-                        statusStr = "<label>未开启<label>";
+                        statusStr = "<label style='color:green;'>未开启<label>";
                         break;
                     }
                 case 3:

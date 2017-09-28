@@ -43,9 +43,10 @@
     </div>
     <div class="newscontent">
         <asp:RadioButtonList ID="answerrbl" runat="server" RepeatDirection="Vertical">
-            <asp:ListItem Value="1">男</asp:ListItem>
-            <asp:ListItem Value="2">女</asp:ListItem>
+            <%--<asp:ListItem Value="1">男</asp:ListItem>
+            <asp:ListItem Value="2">女</asp:ListItem>--%>
         </asp:RadioButtonList>
         <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="submit" OnClick="btnSubmit_Click" />
+        <asp:HyperLink ID="hlViewResult" runat="server" Text="点击查看调查结果" ForeColor="red" Style="cursor: pointer;"></asp:HyperLink>
     </div>
 </asp:Content>

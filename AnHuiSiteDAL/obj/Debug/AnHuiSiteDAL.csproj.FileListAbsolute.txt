@@ -40,3 +40,10 @@ F:\git\GeneralWebSite\AnHuiSiteDAL\bin\Debug\AnHuiSiteModel.pdb
 F:\git\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.csprojResolveAssemblyReference.cache
 F:\git\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.dll
 F:\git\GeneralWebSite\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.pdb
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Debug\AnHuiSiteDAL.dll
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Debug\AnHuiSiteDAL.pdb
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Debug\AnHuiSiteModel.dll
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Debug\AnHuiSiteModel.pdb
+F:\GeneralWebSiteGit\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.csprojResolveAssemblyReference.cache
+F:\GeneralWebSiteGit\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.dll
+F:\GeneralWebSiteGit\AnHuiSiteDAL\obj\Debug\AnHuiSiteDAL.pdb

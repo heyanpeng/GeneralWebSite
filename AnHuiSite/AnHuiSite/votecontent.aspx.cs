@@ -2,6 +2,7 @@
 using AnHuiSiteModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -34,11 +35,32 @@ namespace AnHuiSite
                 return;
             litTitle.Text = voteEntity.Question.ToString();
             litCreateDate.Text = voteEntity.CreateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            //投票项目列表
+            DataSet voteItemDs = voteItemManager.GetList("voteid = " + voteEntity.Id);
+            if (voteItemDs.Tables[0].Rows.Count == 0)
+            {
+                hlViewResult.Visible = false;
+                btnSubmit.Visible = false;
+                return;
+            }
+            answerrbl.DataSource = voteItemDs.Tables[0];
+            answerrbl.DataTextField = "content";
+            answerrbl.DataValueField = "id";
+            answerrbl.DataBind();
+            //绑定查看结果链接
+            hlViewResult.NavigateUrl = "voteresult.aspx?id=" + voteEntity.Id;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string selectValue = answerrbl.SelectedValue;
+            T_VoteItem voteItem = voteItemManager.GetModel(selectValue);
+            if (voteItem != null)
+            {
+                voteItem.Count += 1;
+                voteItemManager.Update(voteItem);
+                Response.Redirect(hlViewResult.NavigateUrl);
+            }
         }
     }
 }

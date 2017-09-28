@@ -117,7 +117,7 @@
                                 <ItemTemplate>
                                     <li><span>▪&nbsp;</span>
                                         <%#GetParentNav(Eval("T_M_Id").ToString()) %>
-                                        <a href="votecontent.aspx?Id=<%#Eval("Id") %>" title="<%#Eval("Question") %>" target="_blank">
+                                        <a href="<%#ReturnUrl(int.Parse(Eval("Status").ToString()),DateTime.Parse(Eval("BeginDateTime").ToString()),DateTime.Parse(Eval("EndDateTime").ToString())) %>?Id=<%#Eval("Id") %>" title="<%#Eval("Question") %>" target="_blank">
                                             <%#AnHuiSite.Common.SubStr(Eval("Question").ToString(),38) %>
                                             <%#ReturnStatus(int.Parse(Eval("Status").ToString()),DateTime.Parse(Eval("BeginDateTime").ToString()),DateTime.Parse(Eval("EndDateTime").ToString())) %>
                                         </a>

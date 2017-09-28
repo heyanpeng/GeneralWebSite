@@ -2,6 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Data;
+using AnHuiSiteModel;
+
 namespace AnHuiSiteBLL
 {
     //T_Vote
@@ -76,6 +78,18 @@ namespace AnHuiSiteBLL
         public List<AnHuiSiteModel.T_Vote> GetModelList(string strWhere)
         {
             DataSet ds = dal.GetList(strWhere);
+            return DataTableToList(ds.Tables[0]);
+        }
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <param name="v3"></param>
+        /// <returns></returns>
+        public List<T_Vote> GetModelList(int top, string strWhere, string filedOrder)
+        {
+            DataSet ds = dal.GetList(top, strWhere, filedOrder);
             return DataTableToList(ds.Tables[0]);
         }
         /// <summary>

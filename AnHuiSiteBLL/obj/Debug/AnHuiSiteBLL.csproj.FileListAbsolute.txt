@@ -58,3 +58,13 @@ F:\git\GeneralWebSite\AnHuiSiteBLL\bin\Debug\AnHuiSiteModel.pdb
 F:\git\GeneralWebSite\AnHuiSiteBLL\obj\Debug\AnHuiSiteBLL.csprojResolveAssemblyReference.cache
 F:\git\GeneralWebSite\AnHuiSiteBLL\obj\Debug\AnHuiSiteBLL.dll
 F:\git\GeneralWebSite\AnHuiSiteBLL\obj\Debug\AnHuiSiteBLL.pdb
+F:\GeneralWebSiteGit\AnHuiSiteBLL\bin\Debug\AnHuiSiteBLL.dll
+F:\GeneralWebSiteGit\AnHuiSiteBLL\bin\Debug\AnHuiSiteBLL.pdb
+F:\GeneralWebSiteGit\AnHuiSiteBLL\bin\Debug\AnHuiSiteDAL.dll
+F:\GeneralWebSiteGit\AnHuiSiteBLL\bin\Debug\AnHuiSiteModel.dll
+F:\GeneralWebSiteGit\AnHuiSiteBLL\bin\Debug\Newtonsoft.Json.dll
+F:\GeneralWebSiteGit\AnHuiSiteBLL\bin\Debug\AnHuiSiteDAL.pdb
+F:\GeneralWebSiteGit\AnHuiSiteBLL\bin\Debug\AnHuiSiteModel.pdb
+F:\GeneralWebSiteGit\AnHuiSiteBLL\obj\Debug\AnHuiSiteBLL.csprojResolveAssemblyReference.cache
+F:\GeneralWebSiteGit\AnHuiSiteBLL\obj\Debug\AnHuiSiteBLL.dll
+F:\GeneralWebSiteGit\AnHuiSiteBLL\obj\Debug\AnHuiSiteBLL.pdb

@@ -357,6 +357,7 @@
     <Content Include="AHAdmin\LinksManager.aspx" />
     <Content Include="AHAdmin\Logout.aspx" />
     <Content Include="AHAdmin\MessagesManager.aspx" />
+    <Content Include="AHAdmin\VoteManager.aspx" />
     <Content Include="AHAdmin\NewsManager.aspx" />
     <Content Include="AHAdmin\AddUser.aspx" />
     <Content Include="AHAdmin\assets\avatars\avatar.png" />
@@ -477,6 +478,7 @@
     <Content Include="AHAdmin\testupload.aspx" />
     <Content Include="AHAdmin\RoleManager.aspx" />
     <Content Include="AHAdmin\UserManager.aspx" />
+    <Content Include="AnHuiSite\voteresult.aspx" />
     <Content Include="AnHuiSite\votecontent.aspx" />
     <Content Include="AnHuiSite\content.aspx" />
     <Content Include="AnHuiSite\css\index.css" />
@@ -1031,6 +1033,13 @@
     <Compile Include="AHAdmin\MessagesManager.aspx.designer.cs">
       <DependentUpon>MessagesManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AHAdmin\VoteManager.aspx.cs">
+      <DependentUpon>VoteManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\VoteManager.aspx.designer.cs">
+      <DependentUpon>VoteManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AHAdmin\NewsManager.aspx.cs">
       <DependentUpon>NewsManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1149,6 +1158,13 @@
       <DependentUpon>UserManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="AHAdmin\Utilities\FileHelper.cs" />
+    <Compile Include="AnHuiSite\voteresult.aspx.cs">
+      <DependentUpon>voteresult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHuiSite\voteresult.aspx.designer.cs">
+      <DependentUpon>voteresult.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AnHuiSite\votecontent.aspx.cs">
       <DependentUpon>votecontent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
