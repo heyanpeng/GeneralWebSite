@@ -29,7 +29,7 @@ namespace AnHuiSiteDAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(AnHuiSiteModel.T_Vote model)
+        public int Add(AnHuiSiteModel.T_Vote model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into T_Vote(");
@@ -68,7 +68,7 @@ namespace AnHuiSiteDAL
             parameters[10].Value = model.ModifyTime;
             parameters[11].Value = model.IsLimitIP;
             parameters[12].Value = model.IsLimitTime;
-            DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            return DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
 
         }
 

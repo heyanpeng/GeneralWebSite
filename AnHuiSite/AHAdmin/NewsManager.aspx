@@ -178,8 +178,8 @@
                                         <asp:LinkButton ID="lbnPrev" runat="server" Text="上一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="Prev"></asp:LinkButton>
                                         <asp:LinkButton ID="lbnNext" runat="Server" Text="下一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Next"></asp:LinkButton>
                                         <asp:LinkButton ID="lbnLast" runat="Server" Text="尾页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Last"></asp:LinkButton>
-                                        到第<asp:TextBox runat="server" ID="inPageNum" style="width: 50px;height: 24px;text-align:center;" MaxLength="4"></asp:TextBox>页
-                                        <asp:Button ID="Button1" CommandName="go" runat="server" Text="跳转" />
+                                        <%--到第<asp:TextBox runat="server" ID="inPageNum" style="width: 50px;height: 24px;text-align:center;" MaxLength="4"></asp:TextBox>页
+                                        <asp:Button ID="Button1" CommandName="go" runat="server" Text="跳转" />--%>
                                     </PagerTemplate>
                                 </asp:GridView>
                             </div>

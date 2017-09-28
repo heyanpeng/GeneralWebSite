@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <script src="js/NewsManager.js"></script>
+    <script src="js/VoteManager.js"></script>
     <script charset="utf-8" src="assets/ueditor/ueditor.config.js"></script>
     <script charset="utf-8" src="assets/ueditor/ueditor.all.min.js"></script>
     <script charset="utf-8" src="assets/ueditor/lang/zh-cn/zh-cn.js"></script>
@@ -14,18 +14,6 @@
             //实例化编辑器
             var ue = UE.getEditor('myEditor');
             InitInputImg();
-            var tId = getQueryString("tId");
-            if (tId == 'bbf038d270cd4e218459d02082f05adc') {
-                $("#divUpImg").attr("style", "");
-            }
-            if (tId == '26f6e85409ba4096beb7ebfadceaeeb4') {
-                $("#divUpVideo").attr("style", "");
-                $("#divUpImg").attr("style", "");
-                document.getElementById('lUploadWord').innerText = "视频缩略图";
-            }
-            if (tId == 'dad4469e96c24175bec133935bafa6a3') {
-                $("#divUpImg").attr("style", "");
-            }
             if ('<%=isAdd%>' == "false") {
                 $("#divNews,#liAdd").remove();
             }
@@ -112,7 +100,7 @@
                                         <asp:TemplateField HeaderText="编辑">
                                             <ItemTemplate>
                                                 <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-                                                    <a class="green" href="EditNews.aspx?mId=<%=mId%>&mName=<%=mName %>&tId=<%=tId%>&id=<%#Eval("Id") %>"><i class="icon-pencil bigger-130"></i></a>
+                                                    <a class="green" href="EditVote.aspx?mId=<%=mId%>&mName=<%=mName %>&tId=<%=tId%>&id=<%#Eval("Id") %>"><i class="icon-pencil bigger-130"></i></a>
                                                 </div>
                                             </ItemTemplate>
                                             <ItemStyle HorizontalAlign="Center" />
@@ -156,8 +144,8 @@
                                         <asp:LinkButton ID="lbnPrev" runat="server" Text="上一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="Prev"></asp:LinkButton>
                                         <asp:LinkButton ID="lbnNext" runat="Server" Text="下一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Next"></asp:LinkButton>
                                         <asp:LinkButton ID="lbnLast" runat="Server" Text="尾页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Last"></asp:LinkButton>
-                                        到第<asp:TextBox runat="server" ID="inPageNum" Style="width: 50px; height: 24px; text-align: center;" MaxLength="4"></asp:TextBox>页
-                                        <asp:Button ID="Button1" CommandName="go" runat="server" Text="跳转" />
+                                        <%--到第<asp:TextBox runat="server" ID="inPageNum" Style="width: 50px; height: 24px; text-align: center;" MaxLength="4"></asp:TextBox>页
+                                        <asp:Button ID="Button1" CommandName="go" runat="server" Text="跳转" />--%>
                                     </PagerTemplate>
                                 </asp:GridView>
                             </div>
@@ -181,12 +169,20 @@
                                 <label for="txtTitle" class="col-sm-1 control-label no-padding-left">调查问题</label>
                                 <div class="col-xs-12 col-sm-5">
                                     <span class="block input-icon input-icon-right">
-                                        <input type="text" name="txtQuestion" id="txtQuestion" class="width-100" placeholder="输入调查问题" onblur="lostfocus('txtTitle')" />
+                                        <input type="text" name="txtQuestion" id="txtQuestion" class="width-100" placeholder="输入调查问题，例如：你对本网站栏目设置是否满意？" onblur="lostfocus('txtTitle')" />
                                         <i class="icon-leaf blue"></i>
                                     </span>
                                 </div>
                             </div>
-
+                            <div class="form-group" id="div11">
+                                <label for="txtTitle" class="col-sm-1 control-label no-padding-left">调查状态</label>
+                                <div class="col-xs-12 col-sm-5">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" name="txtStatus" id="txtStatus" class="width-100" placeholder="输入调查状态，例如：1[根据时间自动计算]、2[未开启]、3[进行中]、4[已结束]、5[关闭]" onblur="lostfocus('txtTitle')" />
+                                        <i class="icon-leaf blue"></i>
+                                    </span>
+                                </div>
+                            </div>
                             <div class="form-group" id="div2">
                                 <label for="txtScanAmount" class="col-sm-1 control-label no-padding-right"></label>
                                 <div class="col-xs-12 col-sm-5">
@@ -204,7 +200,7 @@
                                 <label for="txtOrigin" class="col-sm-1 control-label no-padding-right">开始时间</label>
                                 <div class="col-xs-12 col-sm-5">
                                     <span class="block input-icon input-icon-right">
-                                        <input type="text" name="txtBeginDateTime" id="txtBeginDateTime" class="width-100" placeholder="输入开始时间" onblur="lostfocus('txtBeginDateTime')" />
+                                        <input type="text" name="txtBeginDateTime" id="txtBeginDateTime" class="width-100" placeholder="输入开始时间，例如：2017/01/01 08:00:00" onblur="lostfocus('txtBeginDateTime')" />
                                         <i class="icon-leaf blue"></i>
                                     </span>
                                 </div>
@@ -214,7 +210,7 @@
                                 <label for="txtOrigin" class="col-sm-1 control-label no-padding-right">结束时间</label>
                                 <div class="col-xs-12 col-sm-5">
                                     <span class="block input-icon input-icon-right">
-                                        <input type="text" name="txtEndDateTime" id="txtEndDateTime" class="width-100" placeholder="输入结束时间" onblur="lostfocus('txtEndDateTime')" />
+                                        <input type="text" name="txtEndDateTime" id="txtEndDateTime" class="width-100" placeholder="输入结束时间，例如：2017/01/031 18:00:00" onblur="lostfocus('txtEndDateTime')" />
                                         <i class="icon-leaf blue"></i>
                                     </span>
                                 </div>
@@ -226,7 +222,7 @@
                                     <%--  <div class="wysiwyg-editor" id="editor1"></div>--%>
                                     <%--<script type="text/plain" id="myEditor" style="width: 1000px; min-height: 300px;">
                                     </script>--%>
-                                    <textarea rows="10" cols="95"></textarea>
+                                    <textarea rows="10" cols="95" id="txtVoteItemList" placeholder="输入待选项，一行代表一个待选项,例如：&#xA满意&#xA不满意&#xA一般"></textarea>
                                 </div>
                             </div>
 

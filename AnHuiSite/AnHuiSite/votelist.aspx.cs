@@ -43,7 +43,7 @@ namespace AnHuiSite
                     {
                         litChildTitle.Text = menuManager.GetModel(menu.ParentId).MenuName;
                         lblWh.Text = "Status!=5 and T_M_Id = '" + lblId.Text + "'";
-                        lblOrderBy.Text = "CreateTime desc";
+                        lblOrderBy.Text = "EndDateTime desc";
                         anp.RecordCount = newsManager.GetList("T_M_Id = '" + lblId.Text + "' order by CreateTime desc").Tables[0].Rows.Count;
                         rptChildsdt = menuManager.GetList("Id in (select id from T_Menus where ParentId = ( select parentid from T_Menus where id ='" + lblId.Text + "')) Order by SortIndex desc").Tables[0];
                     }
@@ -51,7 +51,7 @@ namespace AnHuiSite
                     {
                         litChildTitle.Text = menu.MenuName;
                         lblWh.Text = "Status!=5 and T_M_Id in (select id from T_Menus where parentid =  '" + lblId.Text + "')";
-                        lblOrderBy.Text = "CreateTime desc";
+                        lblOrderBy.Text = "EndDateTime desc";
                         anp.RecordCount = newsManager.GetList("T_M_Id in (select id from T_Menus where parentid =  '" + lblId.Text + "') order by CreateTime desc").Tables[0].Rows.Count;
                         rptChildsdt = menuManager.GetList("Id in (select id from T_Menus where ParentId = ( select id from T_Menus where id ='" + lblId.Text + "')) Order by SortIndex desc").Tables[0];
                     }
@@ -199,15 +199,15 @@ namespace AnHuiSite
         {
             if (pStatus == 1)
             {
-                if (pBeginDateTime > DateTime.Today)
+                if (pBeginDateTime > DateTime.Now)
                 {
                     pStatus = 1;
                 }
-                if (pBeginDateTime <= DateTime.Today && DateTime.Today <= pEndDateTime)
+                if (pBeginDateTime <= DateTime.Now && DateTime.Now <= pEndDateTime)
                 {
                     pStatus = 3;
                 }
-                if (pEndDateTime < DateTime.Today)
+                if (pEndDateTime < DateTime.Now)
                 {
                     pStatus = 4;
                 }
@@ -244,15 +244,15 @@ namespace AnHuiSite
         {
             if (pStatus == 1)
             {
-                if (pBeginDateTime > DateTime.Today)
+                if (pBeginDateTime > DateTime.Now)
                 {
-                    pStatus = 1;
+                    pStatus = 2;
                 }
-                if (pBeginDateTime <= DateTime.Today && DateTime.Today <= pEndDateTime)
+                if (pBeginDateTime <= DateTime.Now && DateTime.Now <= pEndDateTime)
                 {
                     pStatus = 3;
                 }
-                if (pEndDateTime < DateTime.Today)
+                if (pEndDateTime < DateTime.Now)
                 {
                     pStatus = 4;
                 }

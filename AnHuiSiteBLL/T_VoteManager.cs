@@ -26,9 +26,9 @@ namespace AnHuiSiteBLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(AnHuiSiteModel.T_Vote model)
+        public int Add(AnHuiSiteModel.T_Vote model)
         {
-            dal.Add(model);
+            return dal.Add(model);
 
         }
 

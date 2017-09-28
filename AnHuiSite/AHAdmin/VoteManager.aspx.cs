@@ -126,15 +126,15 @@ namespace AnHuiSite.AHAdmin
         {
             if (pStatus == 1)
             {
-                if (pBeginDateTime > DateTime.Today)
+                if (pBeginDateTime > DateTime.Now)
                 {
-                    pStatus = 1;
+                    pStatus = 2;
                 }
-                if (pBeginDateTime <= DateTime.Today && DateTime.Today <= pEndDateTime)
+                if (pBeginDateTime <= DateTime.Now && DateTime.Now <= pEndDateTime)
                 {
                     pStatus = 3;
                 }
-                if (pEndDateTime < DateTime.Today)
+                if (pEndDateTime < DateTime.Now)
                 {
                     pStatus = 4;
                 }

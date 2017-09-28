@@ -36,7 +36,7 @@ namespace AnHuiSite
             litTitle.Text = voteEntity.Question.ToString();
             litCreateDate.Text = voteEntity.CreateTime.ToString("yyyy-MM-dd HH:mm:ss");
             //投票项目列表
-            DataTable voteItemDt = voteItemManager.GetList("voteid = " + voteEntity.Id).Tables[0];
+            DataTable voteItemDt = voteItemManager.GetList("voteid = '" + voteEntity.Id + "'").Tables[0];
             if (voteItemDt.Rows.Count == 0)
                 return;
             voteItemDt.Columns.Add("width");

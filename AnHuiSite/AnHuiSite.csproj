@@ -345,6 +345,7 @@
     <Content Include="AHAdmin\EditFiles.aspx" />
     <Content Include="AHAdmin\EditLinks.aspx" />
     <Content Include="AHAdmin\EditMessages.aspx" />
+    <Content Include="AHAdmin\EditVote.aspx" />
     <Content Include="AHAdmin\EditNews.aspx" />
     <Content Include="AHAdmin\FileManager.aspx" />
     <Content Include="AHAdmin\images\loading.gif" />
@@ -352,6 +353,7 @@
     <Content Include="AHAdmin\js\Index.js" />
     <Content Include="AHAdmin\js\Links.js" />
     <Content Include="AHAdmin\js\MessagesManager.js" />
+    <Content Include="AHAdmin\js\VoteManager.js" />
     <Content Include="AHAdmin\js\NewsManager.js" />
     <Content Include="AHAdmin\js\StaticPage.js" />
     <Content Include="AHAdmin\LinksManager.aspx" />
@@ -919,6 +921,7 @@
     <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\bootstrap\README.md" />
     <Content Include="AnHuiSite\Style\ddouble-bsie-fe3a04a\README.md" />
     <Content Include="AnHuiSite\Style\video\images\Logo.psd" />
+    <Content Include="AHAdmin\handlers\Vote.ashx" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <None Include="Scripts\jquery-2.1.0-vsdoc.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -974,6 +977,13 @@
     <Compile Include="AHAdmin\EditMessages.aspx.designer.cs">
       <DependentUpon>EditMessages.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AHAdmin\EditVote.aspx.cs">
+      <DependentUpon>EditVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AHAdmin\EditVote.aspx.designer.cs">
+      <DependentUpon>EditVote.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AHAdmin\EditNews.aspx.cs">
       <DependentUpon>EditNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -999,6 +1009,9 @@
     </Compile>
     <Compile Include="AHAdmin\handlers\Message.ashx.cs">
       <DependentUpon>Message.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="AHAdmin\handlers\Vote.ashx.cs">
+      <DependentUpon>Vote.ashx</DependentUpon>
     </Compile>
     <Compile Include="AHAdmin\handlers\News.ashx.cs">
       <DependentUpon>News.ashx</DependentUpon>
