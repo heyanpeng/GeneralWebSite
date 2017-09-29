@@ -17,8 +17,9 @@ namespace AnHuiSite.AHAdmin
         public string uId;
         public string displayName;
         public string tId;
-        public T_News news;
+        public T_Vote vote;
         public string thisvideoSrc;
+        public string voteItemListStr = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +28,6 @@ namespace AnHuiSite.AHAdmin
             {
                 uId = user.Id.ToString();
                 displayName = user.DisplayName;
-                //plCheck.Visible = string.IsNullOrEmpty(user.District);
             }
             //mId = Request.QueryString["mId"];
             mName = Request.QueryString["mName"];
@@ -36,21 +36,19 @@ namespace AnHuiSite.AHAdmin
             string id = Request.QueryString["Id"];
             if (!IsPostBack)
             {
-                T_NewsManager newsManager = new T_NewsManager();
-                news = newsManager.GetModel(id);
-                if (news == null)
+                T_VoteManager voteManager = new T_VoteManager();
+                vote = voteManager.GetModel(id);
+                if (vote == null)
                 {
-                    ClientScript.RegisterStartupScript(ClientScript.GetType(), "editNews", "<script>showErrorDialog('获取的新闻为空');</script>");
+                    ClientScript.RegisterStartupScript(ClientScript.GetType(), "editVote", "<script>showErrorDialog('获取的数据为空');</script>");
                     return;
                 }
-                mId = news.T_M_Id.ToString();//类型
-                news.Content = news.Content.Replace("\"", "\'");
-                //news.Content = news.Content.Replace("\\", "\\\\");
-
-                DataSet ds = new T_MultiMediaManage().GetList("NewsId='" + news.Id + "'");
-                if (ds != null && ds.Tables[0] != null && ds.Tables[0].Rows.Count > 0)
+                mId = vote.T_M_Id.ToString();//类型
+                T_VoteItemManager voteItemManager = new T_VoteItemManager();
+                DataTable dt = voteItemManager.GetList(100, "voteid = '" + vote.Id + "'","sortindex asc").Tables[0];
+                foreach (DataRow item in dt.Rows)
                 {
-                    thisvideoSrc = new T_MultiMediaManage().GetList("NewsId='" + news.Id + "'").Tables[0].Rows[0]["MediaAddress"].ToString();
+                    voteItemListStr += item["Content"].ToString().Trim() + "\n";
                 }
             }
         }

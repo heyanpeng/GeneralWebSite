@@ -32,16 +32,17 @@ namespace AnHuiSiteDAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into T_VoteItem(");
-            strSql.Append("Id,VoteId,Content,Count");
+            strSql.Append("Id,VoteId,Content,Count,SortIndex");
             strSql.Append(") values (");
-            strSql.Append("@Id,@VoteId,@Content,@Count");
+            strSql.Append("@Id,@VoteId,@Content,@Count,@SortIndex");
             strSql.Append(") ");
 
             SqlParameter[] parameters = {
                         new SqlParameter("@Id", SqlDbType.VarChar,32) ,
                         new SqlParameter("@VoteId", SqlDbType.VarChar,100) ,
                         new SqlParameter("@Content", SqlDbType.VarChar,100) ,
-                        new SqlParameter("@Count", SqlDbType.Int,4)
+                        new SqlParameter("@Count", SqlDbType.Int,4) ,
+                        new SqlParameter("@SortIndex", SqlDbType.Int,4)
 
             };
 
@@ -49,6 +50,7 @@ namespace AnHuiSiteDAL
             parameters[1].Value = model.VoteId;
             parameters[2].Value = model.Content;
             parameters[3].Value = model.Count;
+            parameters[4].Value = model.SortIndex;
             DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
 
         }
@@ -65,14 +67,16 @@ namespace AnHuiSiteDAL
             strSql.Append(" Id = @Id , ");
             strSql.Append(" VoteId = @VoteId , ");
             strSql.Append(" Content = @Content , ");
-            strSql.Append(" Count = @Count  ");
+            strSql.Append(" Count = @Count , ");
+            strSql.Append(" SortIndex = @SortIndex  ");
             strSql.Append(" where Id=@Id  ");
 
             SqlParameter[] parameters = {
                         new SqlParameter("@Id", SqlDbType.VarChar,32) ,
                         new SqlParameter("@VoteId", SqlDbType.VarChar,100) ,
                         new SqlParameter("@Content", SqlDbType.VarChar,100) ,
-                        new SqlParameter("@Count", SqlDbType.Int,4)
+                        new SqlParameter("@Count", SqlDbType.Int,4) ,
+                        new SqlParameter("@SortIndex", SqlDbType.Int,4)
 
             };
 
@@ -80,6 +84,7 @@ namespace AnHuiSiteDAL
             parameters[1].Value = model.VoteId;
             parameters[2].Value = model.Content;
             parameters[3].Value = model.Count;
+            parameters[4].Value = model.SortIndex;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -126,7 +131,7 @@ namespace AnHuiSiteDAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select Id, VoteId, Content, Count  ");
+            strSql.Append("select Id, VoteId, Content, Count, SortIndex  ");
             strSql.Append("  from T_VoteItem ");
             strSql.Append(" where Id=@Id ");
             SqlParameter[] parameters = {
@@ -145,6 +150,10 @@ namespace AnHuiSiteDAL
                 if (ds.Tables[0].Rows[0]["Count"].ToString() != "")
                 {
                     model.Count = int.Parse(ds.Tables[0].Rows[0]["Count"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["SortIndex"].ToString() != "")
+                {
+                    model.SortIndex = int.Parse(ds.Tables[0].Rows[0]["SortIndex"].ToString());
                 }
 
                 return model;

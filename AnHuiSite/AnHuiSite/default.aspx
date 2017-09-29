@@ -354,10 +354,10 @@
                     <div class="row">
                         <div class="col-md-12" style="border: 0px solid green; height: 265px;">
                             <ul class="tabbtn" id="normaltab_right2">
-                                <li class="current" style="margin-left: -40px;"><a href="#">政务公开</a></li>
-                                <li><a href="#">专题专栏</a></li>
-                                <li><a href="#">网上互动</a></li>
-                                <li><a href="#">文件下载</a></li>
+                                <li class="current" style="margin-left: -40px;"><a href="static.aspx?Id=c3944bb1333e49ff821bbbda3d1d052f">快速入口</a></li>
+                                <li><a href="static.aspx?Id=3969896b2bf640f7b31184be073685e6">专栏信息</a></li>
+                                <li><a href="votelist.aspx?Id=baf20a2f57c54fb0b3d5ac16726dded7">网上互动</a></li>
+                                <li><a href="file.aspx?Id=6322447e140a4df499f06b5f0bcfa62c">文件下载</a></li>
                             </ul>
                             <div id="normalcon_right2">
                                 <div>
@@ -414,7 +414,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="list.aspx?Id=???????" title="">
+                                                <a href="list.aspx?Id=de5cfec7bc9341c6a161edebf67c9194" title="">
                                                     <img src="Style/images/ztbd/3.png" />
                                                 </a>
                                             </td>

@@ -134,7 +134,7 @@
                                                 <img src="Style/images/user.png" style="width: 20px; height: 20px;" />
                                                 <%#Eval("UserName") %></span>
                                             <span style="color: #757575; line-height: 30px;">在 <%#Eval("CreateTime") %> 发表的</span>
-                                            <span style="float: right; color: #02854f; font-size: 18px; padding-right: 20px; margin-top: 5px;"><%#Eval("Id") %><sup>#</sup></span>
+                                            <span style="float: right; color: #02854f; font-size: 18px; padding-right: 20px; margin-top: 5px;"><%--<%#Eval("Id") %><sup>#</sup>--%></span>
                                         </td>
                                     </tr>
                                     <tr style="height: auto;">

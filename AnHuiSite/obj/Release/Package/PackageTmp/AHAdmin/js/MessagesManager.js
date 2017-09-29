@@ -3,6 +3,12 @@
 function submit(id) {
     var validation = true;
 
+    var CreateTime = $("#txtCreateTime").val();
+    var Name = $("#txtName").val();
+    var Email = $("#txtEmail").val();
+    var PhoneNum = $("#txtPhoneNum").val();
+    var Subject = $("#txtSubject").val();
+    var Content = $("#txtContent").val();
     var ReplyContent = $("#txtReplyContent").val();
     var Visibility = $("#cbVisibility").is(':checked');
     var IsSolve = $("#cbIsSolve").is(':checked');
@@ -18,6 +24,12 @@ function submit(id) {
 
         var fd = new FormData();
         fd.append("Action", 'ReplayMessage');
+        fd.append("CreateTime", CreateTime);
+        fd.append("Name", Name);
+        fd.append("Email", Email);
+        fd.append("PhoneNum", PhoneNum);
+        fd.append("Subject", Subject);
+        fd.append("Content", Content);
         fd.append("ReplyContent", ReplyContent);
         fd.append("uId", uId);
         fd.append("id", id);

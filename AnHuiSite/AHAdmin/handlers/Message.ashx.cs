@@ -89,12 +89,24 @@ namespace AnHuiSite.AHAdmin.handlers
             ResponseMsg msg = new ResponseMsg();
             try
             {
+                string CreateTime = context.Request["CreateTime"].ToString();
+                string Name = context.Request["Name"].ToString();
+                string Email = context.Request["Email"].ToString();
+                string PhoneNum = context.Request["PhoneNum"].ToString();
+                string Subject = context.Request["Subject"].ToString();
+                string Content = context.Request["Content"].ToString();
                 string ReplyContent = context.Request["ReplyContent"].ToString();
                 string uId = context.Request["uId"].ToString();
                 string id = context.Request["id"].ToString();
                 string Visibility = context.Request["Visibility"].ToString();
                 string IsSolve = context.Request["IsSolve"].ToString();
                 T_Messages message = messagesManager.GetModel(id);
+                message.CreateTime = DateTime.Parse(CreateTime);
+                message.UserName =Name;
+                message.Email = Email;
+                message.PhoneNum = PhoneNum;
+                message.Subject = Subject;
+                message.Content = Content;
                 message.ReplyContent = ReplyContent;
                 message.UId = uId;
                 message.Id = id;

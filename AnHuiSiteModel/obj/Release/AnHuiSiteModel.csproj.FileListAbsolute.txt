@@ -18,3 +18,8 @@ G:\GeneralWebSite\AnHuiSiteModel\bin\Release\AnHuiSiteModel.pdb
 G:\GeneralWebSite\AnHuiSiteModel\obj\Release\AnHuiSiteModel.csprojResolveAssemblyReference.cache
 G:\GeneralWebSite\AnHuiSiteModel\obj\Release\AnHuiSiteModel.dll
 G:\GeneralWebSite\AnHuiSiteModel\obj\Release\AnHuiSiteModel.pdb
+F:\GeneralWebSiteGit\AnHuiSiteModel\bin\Release\AnHuiSiteModel.dll
+F:\GeneralWebSiteGit\AnHuiSiteModel\bin\Release\AnHuiSiteModel.pdb
+F:\GeneralWebSiteGit\AnHuiSiteModel\obj\Release\AnHuiSiteModel.csprojResolveAssemblyReference.cache
+F:\GeneralWebSiteGit\AnHuiSiteModel\obj\Release\AnHuiSiteModel.dll
+F:\GeneralWebSiteGit\AnHuiSiteModel\obj\Release\AnHuiSiteModel.pdb

@@ -44,6 +44,15 @@ namespace AnHuiSiteModel
             get { return _count; }
             set { _count = value; }
         }
+        /// <summary>
+        /// 序号
+        /// </summary>		
+        private int _sortindex;
+        public int SortIndex
+        {
+            get { return _sortindex; }
+            set { _sortindex = value; }
+        }
 
     }
 }

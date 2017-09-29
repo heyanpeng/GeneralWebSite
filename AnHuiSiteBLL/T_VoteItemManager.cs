@@ -98,6 +98,10 @@ namespace AnHuiSiteBLL
                     {
                         model.Count = int.Parse(dt.Rows[n]["Count"].ToString());
                     }
+                    if (dt.Rows[n]["SortIndex"].ToString() != "")
+                    {
+                        model.SortIndex = int.Parse(dt.Rows[n]["SortIndex"].ToString());
+                    }
 
 
                     modelList.Add(model);

@@ -1,0 +1,236 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="AnHuiSite.AHAdmin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        <asp:Literal runat="server" ID="litSiteTitle" />-后台</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+    <%--<link href="css/family=Open+Sans.css" rel="stylesheet" />--%>
+
+
+    <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.full.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.gritter.css" />
+    <link rel="stylesheet" href="assets/css/datepicker.css" />
+    <link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+
+    <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+
+    <!--[if !IE]> -->
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <!-- <![endif]-->
+    <!--[if IE]>
+       <script src="assets/js/jquery-1.10.2.min.js"></script>
+    <![endif]-->
+
+
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/typeahead-bs2.min.js"></script>
+
+    <!-- page specific plugin scripts -->
+
+    <!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+
+    <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="assets/js/jquery.gritter.min.js"></script>
+    <%--<script src="assets/js/spin.min.js"></script>--%>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.easy-pie-chart.min.js"></script>
+    <script src="assets/js/jquery.sparkline.min.js"></script>
+    <script src="assets/js/flot/jquery.flot.min.js"></script>
+    <script src="assets/js/flot/jquery.flot.pie.min.js"></script>
+    <script src="assets/js/flot/jquery.flot.resize.min.js"></script>
+    <script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+    <!-- ace scripts -->
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/ace.min.js"></script>
+    <script src="js/Common.js"></script>
+
+    <script type="text/ecmascript">
+        <%--$(function () {
+            var authorization = '<%=controlAuthorization%>';
+            if (authorization == '1') {
+                $("#liControl,#liAddUser,#liUserList,#liMenu,#liContent,#liStaticPage").attr("style", "display:none");
+                $("#liDistrictNews").addClass("active open")
+            }
+        });--%>
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%--    <form id="form1" runat="server">--%>
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-leaf"></i>
+                        <asp:Literal runat="server" ID="litSiteName" />
+                        后台管理系统
+                    </small>
+                </a>
+                <!-- /.brand -->
+            </div>
+            <!-- /.navbar-header -->
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <span class="user-info">
+                                <small>您好，</small>
+                                <asp:Literal runat="server" ID="litUserName" />
+                            </span>
+
+                            <i class="icon-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="Logout.aspx">
+                                    <i class="icon-off"></i>
+                                    退出
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+        </script>
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+            <div class="sidebar" id="sidebar">
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+                </script>
+                <ul id="ulNav" class="nav nav-list ">
+                    <li id="liControl" class="topMenu active">
+                        <a href="index.aspx">
+                            <i class="icon-dashboard"></i>
+                            <span class="menu-text">控制台 </span>
+                        </a>
+                    </li>
+                    <li id="liContent" class="topMenu">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-edit"></i>
+                            <span class="menu-edit">内容管理 </span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+                        <ul class="submenu">
+                            <asp:Repeater ID="rptMenus" runat="server" OnItemDataBound="rptMenus_ItemDataBound">
+                                <ItemTemplate>
+                                    <li id="li_<%#Eval("Id") %>">
+                                        <a href="<%#Eval("MenuUrl") %>" class="dropdown-toggle">
+                                            <i class="icon-double-angle-right"></i>
+                                            <%#Eval("MenuName") %><b class="arrow icon-angle-down"></b>
+                                        </a>
+                                        <ul class="submenu">
+                                            <asp:Repeater ID="rptSubMenus" runat="server" OnItemDataBound="rptSubMenus_ItemDataBound">
+                                                <ItemTemplate>
+                                                    <li id="li_<%#Eval("Id") %>">
+                                                        <a href="<%#Eval("MenuUrl") %>" class="<%#Eval("CssClass") %>">
+                                                            <i class="icon-double-angle-right"></i>
+                                                            <%#Eval("MenuName") %>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <asp:Repeater ID="rptThirdMenus" runat="server">
+                                                                <ItemTemplate>
+                                                                    <li id="li_<%#Eval("Id") %>">
+                                                                        <a href="<%#Eval("MenuUrl") %>">
+                                                                            <i class="icon-double-angle-right"></i>
+                                                                            <%#Eval("MenuName") %>
+                                                                        </a>
+                                                                    </li>
+                                                                </ItemTemplate>
+                                                            </asp:Repeater>
+                                                        </ul>
+                                                    </li>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </ul>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                </div>
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+                </script>
+            </div>
+            <div class="main-content">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <script type="text/javascript">
+                        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+                    </script>
+
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="icon-home home-icon"></i>
+                            <a href="../Default.aspx" target="_blank">网站前台</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -46,7 +46,7 @@
                     <label for="txtTitle" class="col-sm-1 control-label no-padding-left">留言时间</label>
                     <div class="col-xs-12 col-sm-5">
                         <span class="block input-icon input-icon-right">
-                            <input type="text" readonly="readonly" name="txtCreateTime" id="txtCreateTime" class="width-100" value="<%=messages.CreateTime %>" onblur="lostfocus('txtCreateTime')" />
+                            <input type="text" name="txtCreateTime" id="txtCreateTime" class="width-100" value="<%=messages.CreateTime %>" onblur="lostfocus('txtCreateTime')" />
                             <i class="icon-leaf blue"></i>
                         </span>
                     </div>
@@ -55,7 +55,7 @@
                     <label for="txtTitle" class="col-sm-1 control-label no-padding-left">姓名</label>
                     <div class="col-xs-12 col-sm-5">
                         <span class="block input-icon input-icon-right">
-                            <input type="text" readonly="readonly" name="txtUserName" id="txtName" class="width-100" value="<%=messages.UserName %>" onblur="lostfocus('txtName')" />
+                            <input type="text" name="txtUserName" id="txtName" class="width-100" value="<%=messages.UserName %>" onblur="lostfocus('txtName')" />
                             <i class="icon-leaf blue"></i>
                         </span>
                     </div>
@@ -64,7 +64,7 @@
                     <label for="txtTitle" class="col-sm-1 control-label no-padding-left">邮编</label>
                     <div class="col-xs-12 col-sm-5">
                         <span class="block input-icon input-icon-right">
-                            <input type="text" readonly="readonly" name="txtEmail" id="txtEmail" class="width-100" value="<%=messages.Email %>" onblur="lostfocus('txtEmail')" />
+                            <input type="text" name="txtEmail" id="txtEmail" class="width-100" value="<%=messages.Email %>" onblur="lostfocus('txtEmail')" />
                             <i class="icon-leaf blue"></i>
                         </span>
                     </div>
@@ -74,7 +74,7 @@
                     <label for="txtTitle" class="col-sm-1 control-label no-padding-left">电话</label>
                     <div class="col-xs-12 col-sm-5">
                         <span class="block input-icon input-icon-right">
-                            <input type="text" readonly="readonly" name="txtPhoneNum" id="txtPhoneNum" class="width-100" value="<%=messages.PhoneNum %>" onblur="lostfocus('txtPhoneNum')" />
+                            <input type="text" name="txtPhoneNum" id="txtPhoneNum" class="width-100" value="<%=messages.PhoneNum %>" onblur="lostfocus('txtPhoneNum')" />
                             <i class="icon-leaf blue"></i>
                         </span>
                     </div>
@@ -84,7 +84,7 @@
                     <label for="txtTitle" class="col-sm-1 control-label no-padding-left">主题</label>
                     <div class="col-xs-12 col-sm-5">
                         <span class="block input-icon input-icon-right">
-                            <input type="text" readonly="readonly" name="txtSubject" id="txtSubject" class="width-100" value="<%=messages.Subject %>" onblur="lostfocus('txtSubject')" />
+                            <input type="text" name="txtSubject" id="txtSubject" class="width-100" value="<%=messages.Subject %>" onblur="lostfocus('txtSubject')" />
                             <i class="icon-leaf blue"></i>
                         </span>
                     </div>
@@ -94,7 +94,7 @@
                     <label for="txtTitle" class="col-sm-1 control-label no-padding-left">内容</label>
                     <div class="col-xs-12 col-sm-5">
                         <span class="block input-icon input-icon-right">
-                            <textarea readonly="readonly" rows="10" name="txtContent" id="txtContent" class="width-100" onblur="lostfocus('txtContent')"><%=messages.Content %></textarea>
+                            <textarea rows="10" name="txtContent" id="txtContent" class="width-100" onblur="lostfocus('txtContent')"><%=messages.Content %></textarea>
                             <i class="icon-leaf blue"></i>
                         </span>
                     </div>

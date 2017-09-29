@@ -26,3 +26,10 @@ G:\GeneralWebSite\AnHuiSiteDAL\bin\Release\AnHuiSiteModel.pdb
 G:\GeneralWebSite\AnHuiSiteDAL\obj\Release\AnHuiSiteDAL.csprojResolveAssemblyReference.cache
 G:\GeneralWebSite\AnHuiSiteDAL\obj\Release\AnHuiSiteDAL.dll
 G:\GeneralWebSite\AnHuiSiteDAL\obj\Release\AnHuiSiteDAL.pdb
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Release\AnHuiSiteDAL.dll
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Release\AnHuiSiteDAL.pdb
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Release\AnHuiSiteModel.dll
+F:\GeneralWebSiteGit\AnHuiSiteDAL\bin\Release\AnHuiSiteModel.pdb
+F:\GeneralWebSiteGit\AnHuiSiteDAL\obj\Release\AnHuiSiteDAL.csprojResolveAssemblyReference.cache
+F:\GeneralWebSiteGit\AnHuiSiteDAL\obj\Release\AnHuiSiteDAL.dll
+F:\GeneralWebSiteGit\AnHuiSiteDAL\obj\Release\AnHuiSiteDAL.pdb

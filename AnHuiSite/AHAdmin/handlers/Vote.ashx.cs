@@ -2,6 +2,7 @@
 using AnHuiSiteModel;
 using Newtonsoft.Json;
 using System;
+using System.Data;
 using System.Web;
 
 namespace AnHuiSite.AHAdmin.handlers
@@ -60,18 +61,42 @@ namespace AnHuiSite.AHAdmin.handlers
                 voteitem.VoteId = vote.Id;
                 voteitem.Content = item;
                 voteitem.Count = 0;
+                voteitem.SortIndex = (i + 1);
                 voteItemManager.Add(voteitem);
             }
         }
 
         private static void UpdateVote(HttpContext context)
         {
+            T_VoteManager voteManager = new T_VoteManager();
+            T_VoteItemManager voteItemManager = new T_VoteItemManager();
+
             T_Vote vote = GenerateModel(context);
             string id = context.Request["id"].ToString();
             vote.Id = id;
             vote.ModifyTime = DateTime.Now;
-            T_VoteManager voteManager = new T_VoteManager();
+            vote.CreateTime = voteManager.GetModel(vote.Id).CreateTime;
             voteManager.Update(vote);
+
+            DataTable voteItemDt = voteItemManager.GetList(100, "voteid = '" + vote.Id + "'", "sortindex asc").Tables[0];
+            foreach (DataRow item in voteItemDt.Rows)
+            {
+                voteItemManager.Delete(item["id"].ToString());
+            }
+
+            string voteItemList = context.Request["voteItemList"].ToString();
+            string[] voteItemLines = voteItemList.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < voteItemLines.Length; i++)
+            {
+                string item = voteItemLines[i].ToString().Trim();
+                T_VoteItem voteitem = new T_VoteItem();
+                voteitem.Id = Guid.NewGuid().ToString("N");
+                voteitem.VoteId = vote.Id;
+                voteitem.Content = item;
+                voteitem.Count = 0;
+                voteitem.SortIndex = (i + 1);
+                voteItemManager.Add(voteitem);
+            }
         }
 
         private static T_Vote GenerateModel(HttpContext context)
