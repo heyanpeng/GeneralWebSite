@@ -74,6 +74,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
+    <Content Include="404.html" />
     <Content Include="AHAdmin\AddMenu.aspx" />
     <Content Include="AHAdmin\AddRole.aspx" />
     <Content Include="AHAdmin\assets\ueditor\dialogs\anchor\anchor.html" />
@@ -932,6 +934,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AHAdmin\AddMenu.aspx.cs">
       <DependentUpon>AddMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
